@@ -7,7 +7,7 @@ const DashBoard = ({ children, showNavbar, showFilter }) => {
   return (
     <div style={{ display: 'flex', flexDirection: 'row' }}>
       {showNavbar && <Navbar />}
-      <div>
+      <div style={{ width: '100%' }}>
         {showFilter && <Filter />}
         <div>{children}</div>
       </div>

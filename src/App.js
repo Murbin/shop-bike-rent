@@ -1,6 +1,6 @@
 import React from 'react';
-import RoutesFactory from './routes/RouteFactory';
+import FormikFactory from '../src/components/FormikFactory';
 
-const App = () => <RoutesFactory />;
+const App = () => <FormikFactory />;
 
 export default App;

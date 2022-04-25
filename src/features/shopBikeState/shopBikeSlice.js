@@ -6,7 +6,20 @@ const initialState = {
   value: 0,
   status: 'idle',
   bikes: [],
-  bikesByType: []
+  bikesByType: [],
+  //rent
+  username: '',
+  stepsCompleted: {
+    username: true,
+    email: false,
+    address: false,
+    floor: false,
+    zone: false,
+    has: false,
+    price: false,
+    image: false,
+    hasElevator: false
+  }
 };
 
 export const shopBikeDataSlice = createSlice({
@@ -15,6 +28,17 @@ export const shopBikeDataSlice = createSlice({
   reducers: {
     setToggled: (state) => {
       state.toggled = !state.toggled;
+    },
+    //rent data
+    stepCompleted(state, { payload: { stepsCompleted, name } }) {
+      state[stepsCompleted][name] = true;
+    },
+    updateValueInput(state, { payload: { key, val, child } }) {
+      if (child) {
+        state[key][child] = val.target.checked;
+      } else {
+        state[key] = val.target.value;
+      }
     }
   },
   extraReducers: (builder) => {
@@ -35,8 +59,15 @@ export const shopBikeDataSlice = createSlice({
   }
 });
 
-export const { setToggled } = shopBikeDataSlice.actions;
+export const { setToggled, updateValueInput, stepCompleted } =
+  shopBikeDataSlice.actions;
+
 export const selectToggled = (state) => state.shopBikeData.toggled;
 export const selectBikes = (state) => state.shopBikeData.bikes;
+//Rent
+export const selectName = (state) => state.shopBikeData.username;
+export const selectStepsCompleted = (state) =>
+  state.shopBikeData.stepsCompleted;
+export const selectResume = (state) => state.shopBikeData;
 
 export default shopBikeDataSlice.reducer;

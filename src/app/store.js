@@ -10,7 +10,7 @@ export const store = configureStore({
     getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [
-          // 'salesData/updateVal',
+          'shopBikeData/updateValueInput'
           // 'salesData/updateValSelect',
           // 'salesData/updateImage'
         ]

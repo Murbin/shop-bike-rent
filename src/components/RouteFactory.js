@@ -1,8 +1,8 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { PagesProps } from '../components/pagesProps';
+import { PagesProps } from './pagesProps';
 
-const RouteFactory = () => {
+const RouteFactory = (props) => {
   return (
     <Routes>
       {PagesProps.content.body.map((e, key) => {
@@ -11,6 +11,7 @@ const RouteFactory = () => {
             key={key}
             path={e.path}
             element={React.createElement(e.component, {
+              ...props,
               name: e.name,
               getData: e.getData,
               saveData: e.saveData,

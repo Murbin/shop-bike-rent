@@ -12,6 +12,7 @@ import {
   setToggled,
   selectToggled
 } from '../features/shopBikeState/shopBikeSlice';
+import * as ROUTES from '../utils/urls';
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -39,10 +40,10 @@ const Navbar = () => {
             Catalogue
             <Link to="/catalogue" />
           </MenuItem>
-          <SubMenu title="Rent" icon={<FaBiking />} popperArrow={false}>
+          <SubMenu title="Rent" icon={<FaBiking />}>
             <MenuItem>
               New Rent
-              <Link to="/rent" />
+              <Link to={ROUTES.RENT_FORM} />
             </MenuItem>
             <MenuItem>
               History Rent

@@ -1,7 +1,11 @@
 import * as ROUTES from '../utils/urls';
 import Home from '../pages/home';
 import Catalogue from '../pages/catalogue';
-import Rent from '../pages/rent';
+import Input from '../components/input';
+import {
+  selectName,
+  updateValueInput
+} from '../features/shopBikeState/shopBikeSlice';
 
 export const PagesProps = {
   content: {
@@ -30,17 +34,20 @@ export const PagesProps = {
         validate: undefined,
         description: 'Catalogue'
       },
+      //Form new rent
       {
         _uid: '2',
-        component: Rent,
-        path: ROUTES.RENT,
-        name: 'Catalogue',
-        getData: undefined,
-        saveData: undefined,
+        component: Input,
+        path: ROUTES.RENT_FORM,
+        name: 'username',
+        getData: selectName,
+        saveData: updateValueInput,
+        previous: ROUTES.HOME,
+        next: ROUTES.EMAIL_FORM,
         placeholder: 'Adams Smith',
         type: 'text',
-        validate: undefined,
-        description: 'Catalogue'
+        // validate: validateEmpty,
+        description: 'REQUESTS THE NAME OF THE USER WHO RENT A BIKE'
       }
     ]
   }

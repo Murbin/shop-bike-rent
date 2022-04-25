@@ -47,7 +47,7 @@ const Navbar = () => {
             </MenuItem>
             <MenuItem>
               History Rent
-              <Link to="/rent" />
+              <Link to="/history-rent" />
             </MenuItem>
           </SubMenu>
           {toggled ? (

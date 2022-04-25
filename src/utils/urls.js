@@ -7,4 +7,5 @@ export const DAYS_RENT = '/days-rent';
 export const BIKE_RENT = '/bike-rent';
 export const PRICE_RENT = '/price-rent';
 export const PAYMENT_RENT = '/payment-rent';
+export const HISTORY_RENT = '/history-rent';
 export const RESUME = '/rent-invoice-resume';

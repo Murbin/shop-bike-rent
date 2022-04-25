@@ -17,8 +17,8 @@ const initialState = {
     username: true,
     type: false,
     days: false,
-    image: false,
-    price: false
+    amountRent: false,
+    image: false
   }
 };
 
@@ -31,6 +31,7 @@ export const shopBikeDataSlice = createSlice({
     },
     //rent data
     stepCompleted(state, { payload: { stepsCompleted, name } }) {
+      console.log('action ', state[stepsCompleted][name]);
       state[stepsCompleted][name] = true;
     },
     updateValueInput(state, { payload: { key, val, child } }) {

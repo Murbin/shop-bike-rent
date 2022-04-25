@@ -1,4 +1,4 @@
-export const items = Array(7)
+export const items = Array(5)
   .fill()
   .map((v, i) => {
     return { title: '' };

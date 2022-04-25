@@ -99,7 +99,7 @@ export const PagesProps = {
         _uid: '5',
         component: GroupCardByType,
         path: ROUTES.BIKE_RENT,
-        name: 'bike',
+        name: 'amountRent',
         getData: selectBikes,
         saveData: undefined,
         previous: ROUTES.DAYS_RENT,

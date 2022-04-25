@@ -1,13 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Navbar from './navbar';
-import Container from 'react-bootstrap/Container';
+import Filter from './filter';
 
-const DashBoard = ({ children, showNavbar }) => {
+const DashBoard = ({ children, showNavbar, showFilter }) => {
   return (
     <div style={{ display: 'flex', flexDirection: 'row' }}>
       {showNavbar && <Navbar />}
-      <Container>{children}</Container>
+      <div>
+        {showFilter && <Filter />}
+        <div>{children}</div>
+      </div>
     </div>
   );
 };

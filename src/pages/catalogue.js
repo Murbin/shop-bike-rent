@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
-import incrementAsync from '../features/shopBikeState/apis/listBikes';
-// import typeBike from '../features/shopBikeState/apis/listByTypeBike';
+import { incrementAsync } from '../features/shopBikeState/apis/listBikes';
 import Layout from '../components/layout';
 import { useDispatch, useSelector } from 'react-redux';
 import Card from 'react-bootstrap/Card';
@@ -19,7 +18,7 @@ const Catalogue = () => {
   }, [dispatch]);
 
   return (
-    <Layout showNavbar>
+    <Layout showNavbar showFilter>
       <Row
         style={{
           justifyContent: 'space-around',
@@ -27,49 +26,50 @@ const Catalogue = () => {
           margin: '20px auto'
         }}
       >
-        {bikes.map((bike) => {
-          return (
-            <Col md={4} xs={12} style={{ marginBottom: 10 }} key={bike.id}>
-              <Card
-                style={{
-                  width: '100%',
-                  height: 500,
-                  margin: '0px auto'
-                }}
-              >
-                <div
+        {bikes &&
+          bikes.map((bike) => {
+            return (
+              <Col md={4} xs={12} style={{ marginBottom: 10 }} key={bike.id}>
+                <Card
                   style={{
                     width: '100%',
-
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    height: 320
+                    height: 500,
+                    margin: '0px auto'
                   }}
                 >
-                  <Card.Img src={bike.image} style={{}} />
-                </div>
-
-                <Card.Body style={{ height: '30%' }}>
-                  <Card.Title style={{ fontSize: 16 }} className="text-muted">
-                    {bike.name}
-                  </Card.Title>
-                </Card.Body>
-                <Card.Footer style={{ height: '10%', textAlign: 'center' }}>
-                  <small
+                  <div
                     style={{
-                      fontWeight: 'bold',
-                      fontSize: 20
+                      width: '100%',
+
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      height: 320
                     }}
                   >
-                    {bike.price}
-                  </small>
-                </Card.Footer>
-                <Button style={{ background: '#6085FC' }}>Rent</Button>
-              </Card>
-            </Col>
-          );
-        })}
+                    <Card.Img src={bike.image} style={{}} />
+                  </div>
+
+                  <Card.Body style={{ height: '30%' }}>
+                    <Card.Title style={{ fontSize: 16 }} className="text-muted">
+                      {bike.name}
+                    </Card.Title>
+                  </Card.Body>
+                  <Card.Footer style={{ height: '10%', textAlign: 'center' }}>
+                    <small
+                      style={{
+                        fontWeight: 'bold',
+                        fontSize: 20
+                      }}
+                    >
+                      {bike.price}
+                    </small>
+                  </Card.Footer>
+                  <Button style={{ background: '#6085FC' }}>Rent</Button>
+                </Card>
+              </Col>
+            );
+          })}
       </Row>
     </Layout>
   );

@@ -1,4 +1,4 @@
-import { ProSidebar, Menu, MenuItem } from 'react-pro-sidebar';
+import { ProSidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 import {
   FaHome,
   FaList,
@@ -39,9 +39,16 @@ const Navbar = () => {
             Catalogue
             <Link to="/catalogue" />
           </MenuItem>
-          <MenuItem icon={<FaBiking />}>
-            Rent <Link to="/rent" />
-          </MenuItem>
+          <SubMenu title="Rent" icon={<FaBiking />} popperArrow={false}>
+            <MenuItem>
+              New Rent
+              <Link to="/rent" />
+            </MenuItem>
+            <MenuItem>
+              History Rent
+              <Link to="/rent" />
+            </MenuItem>
+          </SubMenu>
           {toggled ? (
             <MenuItem
               icon={<FaArrowAltCircleRight />}

@@ -2,10 +2,20 @@ import * as ROUTES from '../utils/urls';
 import Home from '../pages/home';
 import Catalogue from '../pages/catalogue';
 import Input from '../components/input';
+import Select from '../components/select';
+import Image from '../components/image';
 import {
   selectName,
+  selectType,
+  selectDaysRent,
+  selectImage,
+  selectBikes,
+  updateImage,
   updateValueInput
 } from '../features/shopBikeState/shopBikeSlice';
+import { validateEmpty, types, maxDays } from '../utils/helper';
+import GroupCardByType from '../components/groupCardByType';
+import Invoice from '../pages/invoice';
 
 export const PagesProps = {
   content: {
@@ -43,11 +53,103 @@ export const PagesProps = {
         getData: selectName,
         saveData: updateValueInput,
         previous: ROUTES.HOME,
-        next: ROUTES.EMAIL_FORM,
+        next: ROUTES.TYPE_BIKE,
         placeholder: 'Adams Smith',
         type: 'text',
-        // validate: validateEmpty,
+        validate: validateEmpty,
         description: 'REQUESTS THE NAME OF THE USER WHO RENT A BIKE'
+      },
+      {
+        _uid: '3',
+        component: Select,
+        path: ROUTES.TYPE_BIKE,
+        name: 'type',
+        getData: selectType,
+        saveData: updateValueInput,
+        previous: ROUTES.RENT_FORM,
+        next: ROUTES.DAYS_RENT,
+        placeholder: undefined,
+        type: 'select',
+        validate: validateEmpty,
+        options: types,
+        choice: null,
+        description: 'REQUESTS TYPE OF RENT',
+        subItem: false,
+        items: [{ id: 1, section: 'type', label: 'Type', childName: '' }]
+      },
+      {
+        _uid: '4',
+        component: Select,
+        path: ROUTES.DAYS_RENT,
+        name: 'days',
+        getData: selectDaysRent,
+        saveData: updateValueInput,
+        previous: ROUTES.TYPE_BIKE,
+        next: ROUTES.BIKE_RENT,
+        placeholder: undefined,
+        type: 'select',
+        validate: validateEmpty,
+        options: maxDays,
+        choice: null,
+        description: 'REQUESTS DAYS OF RENT',
+        subItem: false,
+        items: [{ id: 1, section: 'days', label: 'Days', childName: '' }]
+      },
+      {
+        _uid: '5',
+        component: GroupCardByType,
+        path: ROUTES.BIKE_RENT,
+        name: 'bike',
+        getData: selectBikes,
+        saveData: undefined,
+        previous: ROUTES.DAYS_RENT,
+        next: ROUTES.PAYMENT_RENT,
+        placeholder: undefined,
+        type: undefined,
+        validate: validateEmpty,
+        options: undefined,
+        choice: undefined,
+        description: 'SELECT A BIKE',
+        subItem: false,
+        items: undefined,
+        bikes: selectBikes
+      },
+      {
+        _uid: '6',
+        component: Image,
+        path: ROUTES.PAYMENT_RENT,
+        name: 'image',
+        getData: selectImage,
+        saveData: updateImage,
+        child: undefined,
+        previous: ROUTES.BIKE_RENT,
+        next: ROUTES.RESUME,
+        placeholder: 'Click to load a payment bauch',
+        type: 'file',
+        validate: undefined,
+        options: undefined,
+        choice: undefined,
+        description: 'REQUESTS THE IMAGE OF THE PAYMENT',
+        subItem: undefined,
+        items: undefined
+      },
+      {
+        _uid: '7',
+        component: Invoice,
+        path: ROUTES.RESUME,
+        name: 'Invoice Resume',
+        getData: undefined,
+        saveData: undefined,
+        previous: ROUTES.PAYMENT_RENT,
+        next: ROUTES.HOME,
+        placeholder: undefined,
+        type: undefined,
+        validate: undefined,
+        options: undefined,
+        choice: undefined,
+        description: 'RESUME INVOICE',
+        subItem: false,
+        items: undefined
       }
     ]
   }

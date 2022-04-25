@@ -1,30 +1,25 @@
 import React from 'react';
 import { useDebouncedCallback } from 'use-debounce';
 import { useDispatch, useSelector } from 'react-redux';
-import { Field } from 'formik';
 import Resume from '../pages/resume';
 import PreviousNextStep from '../components/previousNextStep';
 import {
   ContainerMain,
-  ContainerInput,
-  LabelInput,
-  Error,
-  styleInput
+  BackgroundDepartment,
+  LabelInput
 } from '../assets/styles';
 import Layout from '../components/layout';
 
-const Input = ({
+const Image = ({
   name,
   errors,
   handleChange,
-  validateField,
   getData,
   saveData,
   previous,
   next,
   placeholder,
-  type,
-  validate
+  type
 }) => {
   const dispatch = useDispatch();
   const updateValFromStore = useDebouncedCallback((key, val) => {
@@ -32,37 +27,40 @@ const Input = ({
   }, 250);
   const data = useSelector(getData);
 
+  const handleLoadLocalFile = (event) => {
+    event.preventDefault();
+    const file = event.target.files[0];
+    const localImageUrl = window.URL.createObjectURL(file);
+    handleChange(localImageUrl);
+    updateValFromStore('image', localImageUrl);
+  };
+
   return (
     <Layout showNavbar>
       <ContainerMain>
-        <ContainerInput>
-          <LabelInput>{name.toLocaleUpperCase()}</LabelInput>
-          <Field
-            type={type}
+        <BackgroundDepartment>
+          {data ? <img src={data} width={'70%'} alt={'bauch'} /> : null}
+          <LabelInput>{placeholder}</LabelInput>
+          <input
             name={name}
-            placeholder={placeholder}
-            onChange={(val) => {
-              handleChange(val);
-              updateValFromStore(name, val);
-            }}
-            validate={validate}
-            style={styleInput}
-            values={data}
+            id="my-upload-btn"
+            type={type}
+            accept=".jpg, .jpeg, .png .svg"
+            onChange={handleLoadLocalFile}
           />
-          {errors[name] && <Error>{errors[name]}</Error>}
           <PreviousNextStep
             prev={previous}
             nxt={next}
             name={name}
             errors={errors}
             value={data}
-            validate={validateField}
+            validate={() => {}}
           />
-        </ContainerInput>
+        </BackgroundDepartment>
         <Resume />
       </ContainerMain>
     </Layout>
   );
 };
 
-export default Input;
+export default Image;

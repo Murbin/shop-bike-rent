@@ -6,20 +6,11 @@ const FormikFactory = () => (
   <Formik
     initialValues={{
       username: '',
-      email: '',
-      floor: undefined,
-      zone: {
-        bbq: false,
-        comunal: false,
-        entertaiment: false
-      },
-      parking: {
-        has: '',
-        covered: 'No'
-      },
+      type: '',
+      days: undefined,
+      bike: undefined,
       price: undefined,
-      image: undefined,
-      hasElevator: undefined
+      image: undefined
     }}
     onSubmit={({ setSubmitting }) => {
       setSubmitting(false);

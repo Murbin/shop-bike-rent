@@ -19,7 +19,13 @@ const RouteFactory = (props) => {
               next: e.next,
               placeholder: e.placeholder,
               type: e.type,
-              validate: e.validate
+              validate: e.validate,
+              items: e.items,
+              options: e.options,
+              choice: e.choice,
+              child: e.child,
+              subItem: e.subItem,
+              bikes: e.bikes
             })}
           />
         );

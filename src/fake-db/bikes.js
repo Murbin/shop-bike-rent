@@ -2,7 +2,7 @@ export const bikes = [
   {
     id: 1,
     name: 'Bicicleta eléctrica BROOKLYN – Watt. modelo hombre, cuadro en aluminio, frenos de disco hidráulicos, batería invisible, luces',
-    price: '2.195,00€',
+    price: '250',
     image: 'https://airbici.es/wp-content/uploads/2020/07/10865-300x300.jpg',
     descripcion:
       '0Esta e-Bike URBAN definitiva es un festín para la vista y un placer de conducir. Deportivo y rápido gracias al motor eléctrico de 250 vatios en el eje trasero. Apoyo directo que acumula rápidamente hasta 25 kilómetros por hora. Te llevará a cualquier lugar de la ciudad en un abrir y cerrar de ojos con su autonomía de entre 40 y 70 kilómetros'
@@ -10,7 +10,7 @@ export const bikes = [
   {
     id: 2,
     name: 'Bicicleta eléctrica NEW YORK Blue Edition- Watt. modelo hombre, cuadro en aluminio, frenos de disco, batería invisible, luces',
-    price: '1.595,00€',
+    price: '500',
     image:
       'https://airbici.es/wp-content/uploads/2019/03/VM127_green-300x300.jpg',
     descripcion:
@@ -19,7 +19,7 @@ export const bikes = [
   {
     id: 3,
     name: 'Bicicleta eléctrica NEW YORK – Watt. modelo hombre, cuadro en aluminio, frenos de disco, batería invisible, luces',
-    price: '1.495,00€',
+    price: '400',
     image:
       'https://airbici.es/wp-content/uploads/2019/04/vv-739-foolding-20-300x300.jpg',
     descripcion:
@@ -28,7 +28,7 @@ export const bikes = [
   {
     id: 4,
     name: 'Biciclets K-mini 3velocidades, Nexus 480 blanca. disco, amortiguadores delanteros',
-    price: '299,00€',
+    price: '299',
     image:
       'https://airbici.es/wp-content/uploads/2022/01/91ftmcb_xol._ac_sl1500_-300x300.jpg',
     descripcion:
@@ -37,14 +37,14 @@ export const bikes = [
   {
     id: 5,
     name: 'Bicicleta Derail rd50 – Negra.disco, amortiguadores delanteros',
-    price: '399,00€',
+    price: '399',
     image: 'https://airbici.es/wp-content/uploads/2020/07/10865-scaled.jpg',
     descripcion: 'Potente calibre de freno de doble pivote incluido'
   },
   {
     id: 6,
     name: 'Bicicleta Plegable OSSBY CURVE ECO – Eléctrica.disco, amortiguadores delanteros',
-    price: '1.590,00€',
+    price: '655',
     image:
       'https://airbici.es/wp-content/uploads/2022/02/curveazulabierta-510x510-1.jpg',
     descripcion:
@@ -53,7 +53,7 @@ export const bikes = [
   {
     id: 7,
     name: 'Bicicleta Urbana ELEVEN FREEZ 2.0 , Ruedas 700×33, 8 Velocidades, Cuadro de aluminio 606',
-    price: '599,00€',
+    price: '333',
     image:
       'https://airbici.es/wp-content/uploads/2022/01/71nu0d8rsnl._ac_sl1500__1_2-300x300.jpg',
     descripcion:
@@ -62,7 +62,7 @@ export const bikes = [
   {
     id: 8,
     name: 'Velomarche VM 129 MOONSTER – 21 velocidades, frenos de disco, amortiguadores delanteros',
-    price: '389,00€',
+    price: '332',
     image:
       'https://airbici.es/wp-content/uploads/2022/01/71thqcuatgl._ac_sl1500__1-300x300.jpg',
     descripcion:
@@ -71,7 +71,7 @@ export const bikes = [
   {
     id: 9,
     name: 'Bicicleta eléctrica BROOKLYN – Watt. modelo hombre, cuadro en aluminio, frenos de disco hidráulicos, batería invisible, luces',
-    price: '2.195,00€',
+    price: '600',
     image: 'https://airbici.es/wp-content/uploads/2019/03/605_L-VG-300x300.png',
     descripcion:
       '0Esta e-Bike URBAN definitiva es un festín para la vista y un placer de conducir. Deportivo y rápido gracias al motor eléctrico de 250 vatios en el eje trasero. Apoyo directo que acumula rápidamente hasta 25 kilómetros por hora. Te llevará a cualquier lugar de la ciudad en un abrir y cerrar de ojos con su autonomía de entre 40 y 70 kilómetros'
@@ -82,7 +82,7 @@ export const bikesElectrics = [
   {
     id: 1,
     name: 'Bicicleta eléctrica BROOKLYN – Watt. modelo hombre, cuadro en aluminio, frenos de disco hidráulicos, batería invisible, luces',
-    price: '2.195,00€',
+    price: '690',
     image: 'https://airbici.es/wp-content/uploads/2020/07/10865-300x300.jpg',
     descripcion:
       '0Esta e-Bike URBAN definitiva es un festín para la vista y un placer de conducir. Deportivo y rápido gracias al motor eléctrico de 250 vatios en el eje trasero. Apoyo directo que acumula rápidamente hasta 25 kilómetros por hora. Te llevará a cualquier lugar de la ciudad en un abrir y cerrar de ojos con su autonomía de entre 40 y 70 kilómetros'
@@ -90,7 +90,7 @@ export const bikesElectrics = [
   {
     id: 2,
     name: 'Bicicleta eléctrica NEW YORK Blue Edition- Watt. modelo hombre, cuadro en aluminio, frenos de disco, batería invisible, luces',
-    price: '1.595,00€',
+    price: '450',
     image:
       'https://airbici.es/wp-content/uploads/2019/03/VM127_green-300x300.jpg',
     descripcion:
@@ -99,7 +99,7 @@ export const bikesElectrics = [
   {
     id: 3,
     name: 'Bicicleta eléctrica NEW YORK – Watt. modelo hombre, cuadro en aluminio, frenos de disco, batería invisible, luces',
-    price: '1.495,00€',
+    price: '693',
     image:
       'https://airbici.es/wp-content/uploads/2019/04/vv-739-foolding-20-300x300.jpg',
     descripcion:
@@ -111,7 +111,7 @@ export const bikesOlds = [
   {
     id: 4,
     name: 'Biciclets K-mini 3velocidades, Nexus 480 blanca. disco, amortiguadores delanteros',
-    price: '299,00€',
+    price: '300',
     image:
       'https://airbici.es/wp-content/uploads/2022/01/91ftmcb_xol._ac_sl1500_-300x300.jpg',
     descripcion:
@@ -120,14 +120,14 @@ export const bikesOlds = [
   {
     id: 5,
     name: 'Bicicleta Derail rd50 – Negra.disco, amortiguadores delanteros',
-    price: '399,00€',
+    price: '200',
     image: 'https://airbici.es/wp-content/uploads/2020/07/10865-scaled.jpg',
     descripcion: 'Potente calibre de freno de doble pivote incluido'
   },
   {
     id: 6,
     name: 'Bicicleta Plegable OSSBY CURVE ECO – Eléctrica.disco, amortiguadores delanteros',
-    price: '1.590,00€',
+    price: '400',
     image:
       'https://airbici.es/wp-content/uploads/2022/02/curveazulabierta-510x510-1.jpg',
     descripcion:
@@ -139,7 +139,7 @@ export const bikesNormal = [
   {
     id: 7,
     name: 'Bicicleta Urbana ELEVEN FREEZ 2.0 , Ruedas 700×33, 8 Velocidades, Cuadro de aluminio 606',
-    price: '599,00€',
+    price: '300',
     image:
       'https://airbici.es/wp-content/uploads/2022/01/71nu0d8rsnl._ac_sl1500__1_2-300x300.jpg',
     descripcion:
@@ -148,7 +148,7 @@ export const bikesNormal = [
   {
     id: 8,
     name: 'Velomarche VM 129 MOONSTER – 21 velocidades, frenos de disco, amortiguadores delanteros',
-    price: '389,00€',
+    price: '378',
     image:
       'https://airbici.es/wp-content/uploads/2022/01/71thqcuatgl._ac_sl1500__1-300x300.jpg',
     descripcion:
@@ -157,7 +157,7 @@ export const bikesNormal = [
   {
     id: 9,
     name: 'Bicicleta eléctrica BROOKLYN – Watt. modelo hombre, cuadro en aluminio, frenos de disco hidráulicos, batería invisible, luces',
-    price: '2.195,00€',
+    price: '873',
     image: 'https://airbici.es/wp-content/uploads/2019/03/605_L-VG-300x300.png',
     descripcion:
       '0Esta e-Bike URBAN definitiva es un festín para la vista y un placer de conducir. Deportivo y rápido gracias al motor eléctrico de 250 vatios en el eje trasero. Apoyo directo que acumula rápidamente hasta 25 kilómetros por hora. Te llevará a cualquier lugar de la ciudad en un abrir y cerrar de ojos con su autonomía de entre 40 y 70 kilómetros'

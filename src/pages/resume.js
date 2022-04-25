@@ -1,13 +1,17 @@
 import React from 'react';
 import { selectResume } from '../features/shopBikeState/shopBikeSlice';
 import { useSelector } from 'react-redux';
-// import { hasParkingCovered, dollarUS } from '../utils/helper';
+import { eurosDE } from '../utils/helper';
 import Steps from '../components/stepper';
 import { ContainerResume, Text, Title } from '../assets/styles';
 
 const Resume = () => {
   const {
-    username
+    username,
+    type,
+    days,
+    // image,
+    amountRent
     // email, address, floor, zone, parking, hasElevator, price
   } = useSelector(selectResume);
 
@@ -15,21 +19,13 @@ const Resume = () => {
     <ContainerResume>
       {' '}
       <Steps />
-      <Title>Resume </Title>
+      <Title>Data of Rent </Title>
       <Text>Name : {username}</Text>
-      {/* <Text>Email : {email}</Text>
-      <Text>Address : {address}</Text>
-      <Text>Floor : {floor}</Text>
-      <Text>
-        Zones : {zone.bbq && 'Bbq'} {zone.comunal && ' Comunal'}
-        {zone.entertainment && ' Entertainment'}
-        {!zone.bbq && !zone.entertainment && !zone.comunal ? 'NA' : ''}
-      </Text>
-      <Text>
-        Has Parking ? :{hasParkingCovered(parking?.has, parking?.covered)}
-      </Text>
-      <Text>Price : {price ? dollarUS.format(price) : ''}</Text>
-      <Text>Has an elevator ? : {hasElevator}</Text> */}
+      <Text>Type: {type}</Text>
+      <Text>Days: {days}</Text>
+      <Title>
+        Amount Rent : {amountRent ? eurosDE.format(amountRent) : 0}{' '}
+      </Title>
     </ContainerResume>
   );
 };

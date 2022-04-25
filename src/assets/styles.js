@@ -90,6 +90,7 @@ export const ItemZone = styled.div`
 `;
 
 export const ContainerResume = styled.div`
+  position: sticker;
   background: #6085fc;
   width: 100%;
   height: 80vh;
@@ -99,7 +100,7 @@ export const ContainerResume = styled.div`
   flex-direction: column;
   padding-bottom: 20px;
   @media (min-width: 800px) {
-    width: 50%;
+    width: 40%;
     height: 100vh;
     padding-bottom: 0px;
   }
@@ -130,7 +131,10 @@ export const ContainerStepper = styled.div`
 
 export const ContainerReview = styled.div`
   display: flex;
+  width: 100%;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   @media (min-width: 800px) {
     flex-direction: row;
   }
@@ -187,3 +191,25 @@ export const styleInput = {
   ...styleGlobal,
   width: '80%'
 };
+
+export const styleSelect = {
+  ...styleGlobal,
+  width: 150
+};
+
+export const ButtonsContainer = styled.div`
+  position: sticker;
+  background: #6085fc;
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding-bottom: 20px;
+  @media (min-width: 800px) {
+    width: 40%;
+    height: 100vh;
+    padding-bottom: 0px;
+  }
+`;

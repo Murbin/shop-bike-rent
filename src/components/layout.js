@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 import Navbar from './navbar';
 import Filter from './filter';
 
-const DashBoard = ({ children, showNavbar, showFilter }) => {
+const DashBoard = ({ children, showNavbar, showFilter, addBackground }) => {
   return (
     <div style={{ display: 'flex', flexDirection: 'row' }}>
       {showNavbar && <Navbar />}
-      <div style={{ width: '100%' }}>
+      <div
+        style={{ width: '100%', background: addBackground ? '#6085FC' : null }}
+      >
         {showFilter && <Filter />}
         <div>{children}</div>
       </div>

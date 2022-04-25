@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import incrementAsync from '../features/shopBikeState/apis/listBikes';
-import typeBike from '../features/shopBikeState/apis/listByTypeBike';
+// import typeBike from '../features/shopBikeState/apis/listByTypeBike';
 import Layout from '../components/layout';
 import { useDispatch, useSelector } from 'react-redux';
 import Card from 'react-bootstrap/Card';
@@ -12,11 +12,9 @@ import Button from 'react-bootstrap/Button';
 const Catalogue = () => {
   const dispatch = useDispatch();
   const bikes = useSelector(selectBikes);
-  console.log('bikes', bikes);
 
   useEffect(() => {
     dispatch(incrementAsync());
-    // dispatch(typeBike());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
 
@@ -31,7 +29,7 @@ const Catalogue = () => {
       >
         {bikes.map((bike) => {
           return (
-            <Col md={4} xs={12} style={{ marginBottom: 10 }}>
+            <Col md={4} xs={12} style={{ marginBottom: 10 }} key={bike.id}>
               <Card
                 style={{
                   width: '100%',

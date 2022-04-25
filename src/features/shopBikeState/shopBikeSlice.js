@@ -1,13 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 import incrementAsync from './apis/listBikes';
-import typeBike from './apis/listByTypeBike';
 
 const initialState = {
   toggled: false,
   value: 0,
   status: 'idle',
-  bikes: [],
-  bikesByType: []
+  bikes: []
 };
 
 export const shopBikeDataSlice = createSlice({
@@ -24,14 +22,8 @@ export const shopBikeDataSlice = createSlice({
         state.status = 'loading';
       })
       .addCase(incrementAsync.fulfilled, (state, action) => {
+        console.log('incrementAsync');
         state.bikes = action.payload;
-        state.status = 'idle';
-      })
-      .addCase(typeBike.pending, (state) => {
-        state.status = 'loading';
-      })
-      .addCase(typeBike.fulfilled, (state, action) => {
-        state.bikesByType = action.payload;
         state.status = 'idle';
       });
   }

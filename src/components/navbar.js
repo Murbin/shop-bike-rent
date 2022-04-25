@@ -13,10 +13,12 @@ import {
   selectToggled
 } from '../features/shopBikeState/shopBikeSlice';
 import * as ROUTES from '../utils/urls';
+import { useWindowWidth } from '@react-hook/window-size';
 
 const Navbar = () => {
+  const onlyWidth = useWindowWidth();
   const dispatch = useDispatch();
-  const toggled = useSelector(selectToggled);
+  let toggled = useSelector(selectToggled);
   const key = 'toggled';
 
   const menuIconClick = () => {
@@ -31,7 +33,7 @@ const Navbar = () => {
         top: 0
       }}
     >
-      <ProSidebar collapsed={toggled} width={'200px'}>
+      <ProSidebar collapsed={onlyWidth > 800 ? toggled : true} width={'200px'}>
         <Menu iconShape="square">
           <MenuItem icon={<FaHome />}>
             Inicio <Link to="/" />

@@ -22,22 +22,10 @@ const GroupCards = (props) => {
               <Card
                 style={{
                   width: '100%',
-                  height: 500,
                   margin: '0px auto'
                 }}
               >
-                <div
-                  style={{
-                    width: '100%',
-
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    height: 320
-                  }}
-                >
-                  <Card.Img src={bike.image} style={{}} />
-                </div>
+                <Card.Img src={bike.image} width={'100%'} />
 
                 <Card.Body style={{ height: '30%' }}>
                   <Card.Title style={{ fontSize: 16 }} className="text-muted">

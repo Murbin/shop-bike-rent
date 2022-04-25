@@ -98,7 +98,7 @@ export const bikesElectrics = [
   },
   {
     id: 3,
-    name: 'Bicicleta eléctrica NEW YORK – Watt. modelo hombre, cuadro en aluminio, frenos de disco, batería invisible, luces',
+    name: 'Bicicleta eléctrica NEW YORK – Watt. modelo hombre, cuadro en aluminio, frenos de disco, batería invisible, luces. Posee roles ',
     price: '693',
     image:
       'https://airbici.es/wp-content/uploads/2019/04/vv-739-foolding-20-300x300.jpg',
@@ -119,14 +119,14 @@ export const bikesOlds = [
   },
   {
     id: 5,
-    name: 'Bicicleta Derail rd50 – Negra.disco, amortiguadores delanteros',
+    name: 'Bicicleta Derail rd50 – Negra.disco, amortiguadores delanteros. 3velocidades, Nexus 480 blanca. Eléctrica.disco, amortiguadores delanteros',
     price: '200',
     image: 'https://airbici.es/wp-content/uploads/2020/07/10865-scaled.jpg',
     descripcion: 'Potente calibre de freno de doble pivote incluido'
   },
   {
     id: 6,
-    name: 'Bicicleta Plegable OSSBY CURVE ECO – Eléctrica.disco, amortiguadores delanteros',
+    name: 'Bicicleta Plegable OSSBY CURVE ECO – Eléctrica.disco, amortiguadores delanteros. Negra.disco,',
     price: '400',
     image:
       'https://airbici.es/wp-content/uploads/2022/02/curveazulabierta-510x510-1.jpg',
@@ -156,7 +156,7 @@ export const bikesNormal = [
   },
   {
     id: 9,
-    name: 'Bicicleta eléctrica BROOKLYN – Watt. modelo hombre, cuadro en aluminio, frenos de disco hidráulicos, batería invisible, luces',
+    name: 'Velomarche VM 129 MOONSTER – 21 velocidades, frenos de disco, amortiguadores delanteros. ',
     price: '873',
     image: 'https://airbici.es/wp-content/uploads/2019/03/605_L-VG-300x300.png',
     descripcion:

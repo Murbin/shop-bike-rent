@@ -8,10 +8,10 @@ const Steps = () => {
   const stepsCompleted = useSelector(selectStepsCompleted);
 
   let values = Object.values(stepsCompleted);
-  console.log('values', values);
+
   let activeStep;
   for (let i = 0; i < values.length; i++) if (values[i]) activeStep = i;
-  console.log('activeStep', activeStep);
+
   return (
     <ContainerStepper>
       <Stepper

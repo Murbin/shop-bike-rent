@@ -55,7 +55,6 @@ const GroupCards = (props) => {
                     {eurosDE.format(bike.price)}
                   </small>
                 </Card.Footer>
-                <Button style={{ background: '#6085FC' }}>Rent</Button>
               </Card>
             </Col>
           );

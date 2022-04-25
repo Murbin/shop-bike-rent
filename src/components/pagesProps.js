@@ -16,6 +16,7 @@ import {
 import { validateEmpty, types, maxDays } from '../utils/helper';
 import GroupCardByType from '../components/groupCardByType';
 import Invoice from '../pages/invoice';
+import History from '../pages/history';
 
 export const PagesProps = {
   content: {
@@ -148,6 +149,24 @@ export const PagesProps = {
         options: undefined,
         choice: undefined,
         description: 'RESUME INVOICE',
+        subItem: false,
+        items: undefined
+      },
+      {
+        _uid: '8',
+        component: History,
+        path: ROUTES.HISTORY_RENT,
+        name: 'history',
+        getData: undefined,
+        saveData: undefined,
+        previous: undefined,
+        next: undefined,
+        placeholder: undefined,
+        type: undefined,
+        validate: undefined,
+        options: undefined,
+        choice: undefined,
+        description: 'HISTORY RENTS',
         subItem: false,
         items: undefined
       }

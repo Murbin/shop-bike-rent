@@ -18,19 +18,7 @@ import { ContainerMain, ContainerInput } from '../assets/styles';
 import Layout from '../components/layout';
 import PreviousNextStep from '../components/previousNextStep';
 
-const GroupCardByType = ({
-  name,
-  errors,
-  handleChange,
-  validateField,
-  getData,
-  saveData,
-  previous,
-  next,
-  placeholder,
-
-  validate
-}) => {
+const GroupCardByType = ({ name, errors, validateField, previous, next }) => {
   const dispatch = useDispatch();
   const type = useSelector(selectType);
   const bikes = useSelector(selectBikes);
@@ -41,8 +29,8 @@ const GroupCardByType = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
 
-  const selectedBike = useDebouncedCallback((key, val) => {
-    dispatch(updateAmount({ key, val }));
+  const selectedBike = useDebouncedCallback((key, val, name) => {
+    dispatch(updateAmount({ key, val, name }));
   }, 250);
 
   return (
@@ -67,26 +55,16 @@ const GroupCardByType = ({
                     <Card
                       style={{
                         width: '100%',
-                        height: 450,
+
                         margin: '0px auto'
                       }}
                     >
-                      <div
-                        style={{
-                          width: '100%',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          height: 190
-                        }}
-                      >
-                        <Card.Img src={bike.image} style={{}} />
-                      </div>
+                      <Card.Img src={bike.image} style={{}} />
 
                       <Card.Body style={{ height: '25%' }}>
                         <Card.Title
                           style={{ fontSize: 15 }}
-                          className="text-muted"
+                          className="text-muted "
                         >
                           {bike.name}
                         </Card.Title>
@@ -105,7 +83,9 @@ const GroupCardByType = ({
                       </Card.Footer>
                       <Button
                         style={{ background: '#6085FC' }}
-                        onClick={() => selectedBike('amountRent', bike.price)}
+                        onClick={() =>
+                          selectedBike('amountRent', bike.price, bike.name)
+                        }
                       >
                         Rent
                       </Button>

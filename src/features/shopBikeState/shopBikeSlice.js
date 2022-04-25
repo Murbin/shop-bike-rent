@@ -12,6 +12,8 @@ const initialState = {
   type: undefined,
   days: undefined,
   amountRent: undefined,
+  name: undefined,
+  points: undefined,
   image: undefined,
   stepsCompleted: {
     username: true,
@@ -19,7 +21,8 @@ const initialState = {
     days: false,
     amountRent: false,
     image: false
-  }
+  },
+  history: []
 };
 
 export const shopBikeDataSlice = createSlice({
@@ -44,12 +47,13 @@ export const shopBikeDataSlice = createSlice({
     updateImage(state, { payload: { key, val } }) {
       state[key] = val;
     },
-    updateAmount(state, { payload: { key, val } }) {
+    updateAmount(state, { payload: { key, val, name } }) {
       const daysSelected = Number(state.days);
       const priceBase = parseFloat(val);
       switch (state.type) {
         case 'electrics':
           state.amountRent = daysSelected * priceBase;
+          state.points = 2;
           break;
         case 'old':
           if (daysSelected <= 5) {
@@ -58,6 +62,7 @@ export const shopBikeDataSlice = createSlice({
             const daysAfterFiveDays = daysSelected - 5;
             state.amountRent = daysAfterFiveDays * priceBase + priceBase;
           }
+          state.points = 1;
           break;
         case 'normal':
           if (daysSelected <= 3) {
@@ -66,10 +71,22 @@ export const shopBikeDataSlice = createSlice({
             const daysAfterThreeDays = daysSelected - 3;
             state.amountRent = daysAfterThreeDays * priceBase + priceBase;
           }
+          state.points = 1;
           break;
         default:
           break;
       }
+      state.name = name;
+    },
+    updateHistory(state) {
+      state.history.push({
+        days: Number(state.days),
+        type: state.type,
+        username: state.username,
+        amountRent: state.amountRent,
+        name: state.name,
+        points: state.points
+      });
     }
   },
   extraReducers: (builder) => {
@@ -95,6 +112,7 @@ export const {
   updateValueInput,
   updateImage,
   updateAmount,
+  updateHistory,
   stepCompleted
 } = shopBikeDataSlice.actions;
 
@@ -109,5 +127,6 @@ export const selectStepsCompleted = (state) =>
 export const selectResume = (state) => state.shopBikeData;
 export const selectImage = (state) => state.shopBikeData.image;
 export const selectAmountRent = (state) => state.shopBikeData.amountRent;
+export const selectHistory = (state) => state.shopBikeData.history;
 
 export default shopBikeDataSlice.reducer;

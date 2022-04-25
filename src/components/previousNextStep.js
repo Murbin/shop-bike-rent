@@ -8,7 +8,7 @@ import { useFormikContext } from 'formik';
 const PreviousNextStep = ({ prev, nxt, name, errors, value, validate }) => {
   const dispatch = useDispatch();
   const { setErrors } = useFormikContext();
-  console.log('errors', errors);
+
   const next = async () => {
     if (!errors?.value && value) {
       const stepsCompleted = 'stepsCompleted';

@@ -1,18 +1,14 @@
 import React from 'react';
-import {
-  selectResume,
-  selectHistory
-} from '../features/shopBikeState/shopBikeSlice';
+import { selectHistory } from '../features/shopBikeState/shopBikeSlice';
 import { useSelector } from 'react-redux';
-import { eurosDE } from '../utils/helper';
-import { ContainerResume, Text, Title } from '../assets/styles';
+import { Title } from '../assets/styles';
 import Layout from '../components/layout';
 import Table from 'react-bootstrap/Table';
 import Container from 'react-bootstrap/Container';
 
 const History = () => {
   const history = useSelector(selectHistory);
-  console.log('history', history);
+
   return (
     <Layout showNavbar>
       <Container className="p-5">

@@ -9,11 +9,7 @@ export const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
-        ignoredActions: [
-          'shopBikeData/updateValueInput'
-          // 'salesData/updateValSelect',
-          // 'salesData/updateImage'
-        ]
+        ignoredActions: ['shopBikeData/updateValueInput']
       }
     })
 });

@@ -1,17 +1,5 @@
 import styled from 'styled-components';
 
-export const Hero = styled.div`
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: ${(props) => `url(${props.img})`};
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-`;
-
 export const Button = styled.button`
   background: #6085fc;
   border-width: 0px;

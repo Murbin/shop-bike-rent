@@ -8,7 +8,7 @@ import Row from 'react-bootstrap/Row';
 const Filter = () => {
   const dispatch = useDispatch();
 
-  const test = (e) => {
+  const handleFilter = (e) => {
     const type = e.target.value;
     dispatch(anotherAsyncThunk(type));
   };
@@ -33,7 +33,7 @@ const Filter = () => {
         <Form.Select
           aria-label="Select a type"
           style={{ width: 200 }}
-          onChange={(e) => test(e)}
+          onChange={(e) => handleFilter(e)}
         >
           <option value="all">All</option>
           <option value="electrics">Electrics</option>

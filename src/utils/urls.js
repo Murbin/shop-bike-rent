@@ -1,6 +1,5 @@
 export const HOME = '/';
 export const CATALOGUE = '/catalogue';
-//Url Rent
 export const RENT_FORM = '/client-name';
 export const TYPE_BIKE = '/type-bike';
 export const DAYS_RENT = '/days-rent';

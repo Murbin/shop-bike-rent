@@ -20,4 +20,4 @@ The project used hook instead class components because . it offers useEffect and
 
 The project used Formik beacause offers us methods or callbacks to manage the value or the errors or the submit data more readable for us.
 
-It used styled-components beacause with thease we an create components with css , where we can use variables and media queries, all in the same place.
+It used styled-components beacause with thease we an create components with css , where we can use variables and media queries, all in the same place. I dont keep the all css code in all files becouse the time, but i used style component in a few to show you Hot I used it

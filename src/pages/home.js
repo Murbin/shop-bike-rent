@@ -16,7 +16,7 @@ const Home = () => (
         flexDirection: 'column'
       }}
     >
-      <h1>Rent the Best Bikes!!</h1>
+      <h1 style={{ textAlign: 'center' }}>Rent the Best Bikes!!</h1>
       <Card className="text-center my-2">
         <Card.Header>7 hours ago</Card.Header>
         <Card.Body>

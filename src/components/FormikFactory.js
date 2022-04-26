@@ -1,17 +1,11 @@
 import React from 'react';
 import { Formik, Form } from 'formik';
 import RouteFactory from '../components/RouteFactory';
+import { initialValues } from '../utils/helper';
 
 const FormikFactory = () => (
   <Formik
-    initialValues={{
-      username: '',
-      type: '',
-      days: undefined,
-      bike: undefined,
-      price: undefined,
-      image: undefined
-    }}
+    initialValues={initialValues}
     onSubmit={({ setSubmitting }) => {
       setSubmitting(false);
     }}

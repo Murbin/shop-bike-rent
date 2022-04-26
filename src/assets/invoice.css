@@ -1,0 +1,12 @@
+.buttonCustom{
+    text-align: center;
+    background: white;
+    width: 100px;
+    padding: 7px;
+    margin-right: 26px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    border-radius: 20px;
+    border-width: 0;
+}

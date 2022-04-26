@@ -1,3 +1,12 @@
+export const initialValues = {
+  username: '',
+  type: '',
+  days: undefined,
+  bike: undefined,
+  price: undefined,
+  image: undefined
+};
+
 export const items = Array(5)
   .fill()
   .map((v, i) => {

@@ -1,5 +1,16 @@
 import styled from 'styled-components';
 
+export const ContainerHome = styled.button`
+  width: 70%;
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-width: 0;
+  background: white;
+`;
+
 export const Button = styled.button`
   background: #6085fc;
   border-width: 0px;
@@ -106,6 +117,7 @@ export const Text = styled.p`
 
 export const Title = styled(Text)`
   font-weight: bold;
+  text-align: center;
 `;
 
 export const ContainerStepper = styled.div`

@@ -5,6 +5,7 @@ import { Title } from '../assets/styles';
 import Layout from '../components/layout';
 import Table from 'react-bootstrap/Table';
 import Container from 'react-bootstrap/Container';
+import { eurosDE } from '../utils/helper';
 
 const History = () => {
   const history = useSelector(selectHistory);
@@ -28,13 +29,15 @@ const History = () => {
           <tbody>
             {history.map((item, i) => {
               return (
-                <tr>
+                <tr key={i}>
                   <td>{i}</td>
                   <td>{item.username}</td>
                   <td>{item.days}</td>
                   <td>{item.type}</td>
                   <td>{item.name}</td>
-                  <td>{item.amountRent}</td>
+                  <td>
+                    {item.amountRent ? eurosDE.format(item.amountRent) : null}
+                  </td>
                   <td>{item.points}</td>
                 </tr>
               );

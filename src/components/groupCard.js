@@ -3,44 +3,24 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { eurosDE } from '../utils/helper';
+import '../assets/groupCard.css';
 
 const GroupCards = (props) => {
   const { bikes } = props;
 
   return (
-    <Row
-      style={{
-        justifyContent: 'space-around',
-        width: '80%',
-        margin: '20px auto'
-      }}
-    >
+    <Row className="containerGroupCard">
       {bikes &&
         bikes.map((bike) => {
           return (
-            <Col md={4} xs={12} style={{ marginBottom: 10 }} key={bike.id}>
-              <Card
-                style={{
-                  width: '100%',
-                  margin: '0px auto'
-                }}
-              >
-                <Card.Img src={bike.image} width={'100%'} />
-
+            <Col md={4} xs={12} className="my-2" key={bike.id}>
+              <Card className="w-100 mx-auto">
+                <Card.Img src={bike.image} className="w-100" />
                 <Card.Body style={{ height: '30%' }}>
-                  <Card.Title style={{ fontSize: 16 }} className="text-muted">
-                    {bike.name}
-                  </Card.Title>
+                  <Card.Title className="text-muted h6">{bike.name}</Card.Title>
                 </Card.Body>
-                <Card.Footer style={{ height: '10%', textAlign: 'center' }}>
-                  <small
-                    style={{
-                      fontWeight: 'bold',
-                      fontSize: 20
-                    }}
-                  >
-                    {eurosDE.format(bike.price)}
-                  </small>
+                <Card.Footer className="text-center h4 p-0 m-0">
+                  {eurosDE.format(bike.price)}
                 </Card.Footer>
               </Card>
             </Col>

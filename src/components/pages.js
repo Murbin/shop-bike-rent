@@ -1,9 +1,9 @@
 import * as ROUTES from '../utils/urls';
 import Home from '../pages/home';
 import Catalogue from '../pages/catalogue';
-import Input from '../components/input';
-import Select from '../components/select';
-import Image from '../components/image';
+import Input from './input';
+import Select from './select';
+import Image from './image';
 import {
   selectName,
   selectType,
@@ -14,24 +14,24 @@ import {
   updateValueInput
 } from '../features/shopBikeState/shopBikeSlice';
 import { validateEmpty, types, maxDays } from '../utils/helper';
-import GroupCardByType from '../components/groupCardByType';
+import GroupCardByType from './groupCardByType';
 import Invoice from '../pages/invoice';
 import History from '../pages/history';
 
-export const PagesProps = {
+export const Pages = {
   content: {
     body: [
       {
         _uid: '0',
         component: Home,
         path: ROUTES.HOME,
-        name: 'home',
+        name: undefined,
         getData: undefined,
         saveData: undefined,
-        placeholder: 'Adams Smith',
-        type: 'text',
+        placeholder: undefined,
+        type: undefined,
         validate: undefined,
-        description: 'Home'
+        description: 'Page Home'
       },
       {
         _uid: '1',
@@ -43,9 +43,8 @@ export const PagesProps = {
         placeholder: 'Adams Smith',
         type: 'text',
         validate: undefined,
-        description: 'Catalogue'
+        description: 'Page Catalogue'
       },
-      //Form new rent
       {
         _uid: '2',
         component: Input,
@@ -58,7 +57,7 @@ export const PagesProps = {
         placeholder: 'Adams Smith',
         type: 'text',
         validate: validateEmpty,
-        description: 'REQUESTS THE NAME OF THE USER WHO RENT A BIKE'
+        description: 'RENT FORM REQUESTS THE NAME OF THE USER WHO RENT A BIKE'
       },
       {
         _uid: '3',

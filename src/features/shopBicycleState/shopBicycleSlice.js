@@ -1,13 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { incrementAsync, anotherAsyncThunk } from './apis/listBikes';
+import { incrementAsync, anotherAsyncThunk } from './apis/listBicycles';
 
 const initialState = {
   toggled: false,
   value: 0,
   status: 'idle',
-  bikes: [],
-  bikesByType: [],
-  //rent
+  bicycles: [],
+  bicyclesByType: [],
   username: '',
   type: undefined,
   days: undefined,
@@ -25,16 +24,14 @@ const initialState = {
   history: []
 };
 
-export const shopBikeDataSlice = createSlice({
-  name: 'shopBikeData',
+export const shopBicycleDataSlice = createSlice({
+  name: 'shopBicycleData',
   initialState,
   reducers: {
     setToggled: (state) => {
       state.toggled = !state.toggled;
     },
-    //rent data
     stepCompleted(state, { payload: { stepsCompleted, name } }) {
-      console.log('action ', state[stepsCompleted][name]);
       state[stepsCompleted][name] = true;
     },
     updateValueInput(state, { payload: { key, val, child } }) {
@@ -95,14 +92,14 @@ export const shopBikeDataSlice = createSlice({
         state.status = 'loading';
       })
       .addCase(incrementAsync.fulfilled, (state, action) => {
-        state.bikes = action.payload;
+        state.bicycles = action.payload;
         state.status = 'idle';
       })
       .addCase(anotherAsyncThunk.pending, (state, action) => {
         state.status = 'loading';
       })
       .addCase(anotherAsyncThunk.fulfilled, (state, action) => {
-        state.bikes = action.payload;
+        state.bicycles = action.payload;
       });
   }
 });
@@ -114,19 +111,18 @@ export const {
   updateAmount,
   updateHistory,
   stepCompleted
-} = shopBikeDataSlice.actions;
+} = shopBicycleDataSlice.actions;
 
-export const selectToggled = (state) => state.shopBikeData.toggled;
-export const selectBikes = (state) => state.shopBikeData.bikes;
-//Rent
-export const selectName = (state) => state.shopBikeData.username;
-export const selectType = (state) => state.shopBikeData.type;
-export const selectDaysRent = (state) => state.shopBikeData.days;
+export const selectToggled = (state) => state.shopBicycleData.toggled;
+export const selectBicycles = (state) => state.shopBicycleData.bicycles;
+export const selectName = (state) => state.shopBicycleData.username;
+export const selectType = (state) => state.shopBicycleData.type;
+export const selectDaysRent = (state) => state.shopBicycleData.days;
 export const selectStepsCompleted = (state) =>
-  state.shopBikeData.stepsCompleted;
-export const selectResume = (state) => state.shopBikeData;
-export const selectImage = (state) => state.shopBikeData.image;
-export const selectAmountRent = (state) => state.shopBikeData.amountRent;
-export const selectHistory = (state) => state.shopBikeData.history;
+  state.shopBicycleData.stepsCompleted;
+export const selectResume = (state) => state.shopBicycleData;
+export const selectImage = (state) => state.shopBicycleData.image;
+export const selectAmountRent = (state) => state.shopBicycleData.amountRent;
+export const selectHistory = (state) => state.shopBicycleData.history;
 
-export default shopBikeDataSlice.reducer;
+export default shopBicycleDataSlice.reducer;

@@ -1,9 +1,9 @@
 export const HOME = '/';
 export const CATALOGUE = '/catalogue';
 export const RENT_FORM = '/client-name';
-export const TYPE_BIKE = '/type-bike';
+export const TYPE_BICYCLE = '/type-bicycle';
 export const DAYS_RENT = '/days-rent';
-export const BIKE_RENT = '/bike-rent';
+export const BICYCLE_RENT = '/bicycle-rent';
 export const PRICE_RENT = '/price-rent';
 export const PAYMENT_RENT = '/payment-rent';
 export const HISTORY_RENT = '/history-rent';

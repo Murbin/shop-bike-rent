@@ -1,30 +1,31 @@
 import React from 'react';
-import * as ROUTES from '../utils/urls';
-import Resume from '../pages/resume';
-import Layout from '../components/layout';
+import Resume from './Resume';
+import Layout from '../components/Layout';
 import { ContainerReview, ButtonsContainer } from '../assets/styles';
-import Button from '../components/button';
+import Button from '../components/Button';
 import { useDispatch } from 'react-redux';
-import { updateHistory } from '../features/shopBikeState/shopBikeSlice';
+import { updateHistory } from '../features/shopBicycleState/shopBicycleSlice';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import '../assets/invoice.css';
 
 const Invoice = ({ previous, next }) => {
+  const { t } = useTranslation('translation');
   const dispatch = useDispatch();
   let navigate = useNavigate();
 
   const handleHistory = () => {
     dispatch(updateHistory());
-    navigate(ROUTES.HISTORY_RENT);
+    navigate(next);
   };
 
   return (
     <Layout showNavbar addBackground>
       <ContainerReview>
         <ButtonsContainer>
-          <Button to={previous} label={'Previous'} />
+          <Button to={previous} label={t('previous')} />
           <button className="buttonCustom" onClick={handleHistory}>
-            History
+            {t('invoice.history')}
           </button>
         </ButtonsContainer>
         <Resume />

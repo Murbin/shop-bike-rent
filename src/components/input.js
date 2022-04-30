@@ -2,8 +2,8 @@ import React from 'react';
 import { useDebouncedCallback } from 'use-debounce';
 import { useDispatch, useSelector } from 'react-redux';
 import { Field } from 'formik';
-import Resume from '../pages/resume';
-import PreviousNextStep from '../components/previousNextStep';
+import Resume from '../pages/Resume';
+import PreviousNextStep from '../components/PreviousNextStep';
 import {
   ContainerMain,
   ContainerInput,
@@ -11,7 +11,8 @@ import {
   Error,
   styleInput
 } from '../assets/styles';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
+import { useTranslation } from 'react-i18next';
 
 const Input = ({
   name,
@@ -26,6 +27,7 @@ const Input = ({
   type,
   validate
 }) => {
+  const { t } = useTranslation('translation');
   const dispatch = useDispatch();
   const updateValFromStore = useDebouncedCallback((key, val) => {
     dispatch(saveData({ key, val }));
@@ -36,7 +38,7 @@ const Input = ({
     <Layout showNavbar>
       <ContainerMain>
         <ContainerInput>
-          <LabelInput>{name.toLocaleUpperCase()}</LabelInput>
+          <LabelInput>{t(name)}</LabelInput>
           <Field
             type={type}
             name={name}
@@ -49,7 +51,7 @@ const Input = ({
             style={styleInput}
             values={data}
           />
-          {errors[name] && <Error>{errors[name]}</Error>}
+          {errors[name] && <Error>{t(errors[name])}</Error>}
           <PreviousNextStep
             prev={previous}
             nxt={next}

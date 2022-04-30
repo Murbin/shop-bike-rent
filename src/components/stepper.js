@@ -1,5 +1,5 @@
 import Stepper from 'react-stepper-horizontal';
-import { selectStepsCompleted } from '../features/shopBikeState/shopBikeSlice';
+import { selectStepsCompleted } from '../features/shopBicycleState/shopBicycleSlice';
 import { useSelector } from 'react-redux';
 import { ContainerStepper } from '../assets/styles';
 import { items } from '../utils/helper';

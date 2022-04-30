@@ -4,16 +4,18 @@ import {
   FaList,
   FaArrowAltCircleRight,
   FaArrowAltCircleLeft,
-  FaBiking
+  FaBiking,
+  FaTorah
 } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   setToggled,
   selectToggled
-} from '../features/shopBikeState/shopBikeSlice';
+} from '../features/shopBicycleState/shopBicycleSlice';
 import * as ROUTES from '../utils/urls';
 import { useWindowWidth } from '@react-hook/window-size';
+import i18n from 'i18next';
 
 const Navbar = () => {
   const onlyWidth = useWindowWidth();
@@ -23,6 +25,10 @@ const Navbar = () => {
 
   const menuIconClick = () => {
     dispatch(setToggled({ key, toggled }));
+  };
+
+  const handleLanguaje = async (lng) => {
+    await i18n.changeLanguage(lng);
   };
 
   return (
@@ -50,6 +56,14 @@ const Navbar = () => {
             <MenuItem>
               History Rent
               <Link to="/history-rent" />
+            </MenuItem>
+          </SubMenu>
+          <SubMenu title="Languajes" icon={<FaTorah />}>
+            <MenuItem icon={<FaTorah />} onClick={() => handleLanguaje('es')}>
+              Español
+            </MenuItem>
+            <MenuItem icon={<FaTorah />} onClick={() => handleLanguaje('en')}>
+              English
             </MenuItem>
           </SubMenu>
           {toggled ? (

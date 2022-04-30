@@ -1,7 +1,7 @@
 import React from 'react';
 import { ContainerHome, Title } from '../assets/styles';
-import Layout from '../components/layout';
-import CardCustom from '../components/card';
+import Layout from '../components/Layout';
+import CardCustom from '../components/Card';
 import { cardsData, titleHome } from '../utils/home-data';
 
 const Home = () => (

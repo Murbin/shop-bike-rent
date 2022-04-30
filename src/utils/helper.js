@@ -2,7 +2,7 @@ export const initialValues = {
   username: '',
   type: '',
   days: undefined,
-  bike: undefined,
+  bicycle: undefined,
   price: undefined,
   image: undefined
 };

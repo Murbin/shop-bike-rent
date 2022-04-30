@@ -1,7 +1,7 @@
-export const bikes = [
+export const bicycles = [
   {
     id: 1,
-    name: 'Bicicleta eléctrica BROOKLYN – Watt. modelo hombre, cuadro en aluminio, frenos de disco hidráulicos, batería invisible, luces',
+    name: 'Bicicleta III eléctrica HARRP – Watt. modelo hombre, cuadro en aluminio, frenos de disco hidráulicos, batería invisible, luces',
     price: '250',
     image: 'https://airbici.es/wp-content/uploads/2020/07/10865-300x300.jpg',
     descripcion:
@@ -9,7 +9,7 @@ export const bikes = [
   },
   {
     id: 2,
-    name: 'Bicicleta eléctrica NEW YORK Blue Edition- Watt. modelo hombre, cuadro en aluminio, frenos de disco, batería invisible, luces',
+    name: 'Modelo 2022 hombre, cuadro en aluminio, frenos de disco, batería invisible, Bicicleta eléctrica NEW YORK Blue Edition- Watt. m',
     price: '500',
     image:
       'https://airbici.es/wp-content/uploads/2019/03/VM127_green-300x300.jpg',
@@ -18,7 +18,7 @@ export const bikes = [
   },
   {
     id: 3,
-    name: 'Bicicleta eléctrica BROOKLYN – Watt. modelo hombre, cuadro en aluminio, frenos de disco hidráulicos, batería invisible, luces',
+    name: '204 Bicicleta Poderosa  MEGAN – Watt. modelo hombre, cuadro en aluminio, frenos de disco hidráulicos, batería invisible, luces',
     price: '250',
     image: 'https://airbici.es/wp-content/uploads/2020/07/10865-300x300.jpg',
     descripcion:
@@ -26,7 +26,7 @@ export const bikes = [
   },
   {
     id: 4,
-    name: 'Biciclets K-mini 3velocidades, Nexus 480 blanca. disco, amortiguadores delanteros',
+    name: '2000 Biciclets OSSBY 3velocidades, Nexus 480 blanca. disco, amortiguadores delanteros',
     price: '299',
     image:
       'https://airbici.es/wp-content/uploads/2022/01/91ftmcb_xol._ac_sl1500_-300x300.jpg',
@@ -35,7 +35,7 @@ export const bikes = [
   },
   {
     id: 5,
-    name: 'II Biciclets K-mini 3velocidades, Nexus 480 blanca. disco, amortiguadores delanteros',
+    name: '3000 Biciclets K-mini 4 velocidades, Nexus 480 blanca. disco, amortiguadores delanteros',
     price: '299',
     image:
       'https://airbici.es/wp-content/uploads/2022/01/91ftmcb_xol._ac_sl1500_-300x300.jpg',
@@ -44,7 +44,7 @@ export const bikes = [
   },
   {
     id: 6,
-    name: 'Bicicleta Plegable OSSBY CURVE ECO – Eléctrica.disco, amortiguadores delanteros',
+    name: 'Velomarche Plegable OSSBY CURVE ECO – Eléctrica.disco, amortiguadores delanteros',
     price: '655',
     image:
       'https://airbici.es/wp-content/uploads/2022/02/curveazulabierta-510x510-1.jpg',
@@ -53,7 +53,7 @@ export const bikes = [
   },
   {
     id: 7,
-    name: 'Bicicleta Urbana ELEVEN FREEZ 2.0 , Ruedas 700×33, 8 Velocidades, Cuadro de aluminio 606',
+    name: 'Bicicleta OSSBY ELEVEN FREEZ 2.0 , Ruedas 700×33, 8 Velocidades, Cuadro de aluminio 606',
     price: '333',
     image:
       'https://airbici.es/wp-content/uploads/2022/01/71nu0d8rsnl._ac_sl1500__1_2-300x300.jpg',
@@ -71,7 +71,7 @@ export const bikes = [
   },
   {
     id: 9,
-    name: 'Velomarche VM 129 MOONSTER – 21 velocidades, frenos de disco, amortiguadores delanteros',
+    name: 'OSSBY VM 129 MOONSTER – 21 velocidades, frenos de disco, amortiguadores delanteros',
     price: '332',
     image:
       'https://airbici.es/wp-content/uploads/2022/01/71thqcuatgl._ac_sl1500__1-300x300.jpg',
@@ -80,10 +80,10 @@ export const bikes = [
   }
 ];
 
-export const bikesElectrics = [
+export const bicyclesElectrics = [
   {
     id: 1,
-    name: 'Bicicleta eléctrica NEW YORK – Watt. modelo hombre, cuadro en aluminio, frenos de disco, batería invisible, luces. Posee roles ',
+    name: 'Bicicleta 3 eléctrica AMSTERDAM – Watt. modelo hombre, cuadro en aluminio, frenos de disco, batería invisible, luces. Posee roles ',
     price: '400',
     image:
       'https://airbici.es/wp-content/uploads/2019/04/vv-739-foolding-20-300x300.jpg',
@@ -92,7 +92,7 @@ export const bikesElectrics = [
   },
   {
     id: 2,
-    name: 'Bicicleta eléctrica NEW YORK – Watt. modelo hombre, cuadro en aluminio, frenos de disco, batería invisible, luces. Posee roles ',
+    name: '77 Bicicleta eléctrica ANGELES – Watt. modelo hombre, cuadro en aluminio, frenos de disco, batería invisible, luces. Posee roles ',
     price: '673',
     image:
       'https://airbici.es/wp-content/uploads/2019/04/vv-739-foolding-20-300x300.jpg',
@@ -101,7 +101,7 @@ export const bikesElectrics = [
   },
   {
     id: 3,
-    name: 'Bicicleta eléctrica NEW YORK – Watt. modelo hombre, cuadro en aluminio, frenos de disco, batería invisible, luces. Posee roles ',
+    name: 'Bicicleta eléctrica MIAMI 7 – Watt. modelo hombre, cuadro en aluminio, frenos de disco, batería invisible, luces. Posee roles ',
     price: '693',
     image:
       'https://airbici.es/wp-content/uploads/2019/04/vv-739-foolding-20-300x300.jpg',
@@ -110,7 +110,7 @@ export const bikesElectrics = [
   }
 ];
 
-export const bikesOlds = [
+export const bicyclesOlds = [
   {
     id: 4,
     name: 'Biciclets K-mini 3velocidades, Nexus 480 blanca. disco, amortiguadores delanteros',
@@ -140,7 +140,7 @@ export const bikesOlds = [
   }
 ];
 
-export const bikesNormal = [
+export const bicyclesNormal = [
   {
     id: 7,
     name: 'Bicicleta Urbana ELEVEN FREEZ 2.0 , Ruedas 700×33, 8 Velocidades, Cuadro de aluminio 606',

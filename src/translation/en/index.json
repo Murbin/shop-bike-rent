@@ -1,0 +1,35 @@
+{
+    "username": "Name",
+    "Type" : "Type",
+    "select" : "Select",
+    "Days": "Days",
+    "electrics" : "Electrics",
+    "old" : "Old",
+    "normal" : "Normal",
+    "Required field" :"Required field",
+    "group-by-card": {
+        "rent":  "Rent" 
+      },
+    "invoice" : {
+        "history" : "History"
+    },
+    "history" : {
+        "history-rent" : "Rental History",
+        "id" : "Id"
+    },
+    "image"  : {
+        "title" : "Click to load a payment bauch"
+    },
+    "previous" : "Previous",
+    "next" : "Next",
+    "resume" : {
+        "info-data" : "Rental Information"
+    },
+    "name" : "Name",
+    "days" : "Days",
+    "type" : "Type",
+    "bicycle" : "Bicycle",
+    "amount" : "Amount",
+    "points" : "Points",
+    "amount-rental" : "Total Rent"
+}

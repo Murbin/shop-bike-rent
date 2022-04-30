@@ -1,5 +1,5 @@
 import React from 'react';
-import { anotherAsyncThunk } from '../features/shopBikeState/apis/listBikes';
+import { anotherAsyncThunk } from '../features/shopBicycleState/apis/listBicycles';
 import { useDispatch } from 'react-redux';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';

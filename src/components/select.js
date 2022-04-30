@@ -2,8 +2,8 @@ import React from 'react';
 import { useDebouncedCallback } from 'use-debounce';
 import { useDispatch, useSelector } from 'react-redux';
 import { Field } from 'formik';
-import Resume from '../pages/resume';
-import PreviousNextStep from './previousNextStep';
+import Resume from '../pages/Resume';
+import PreviousNextStep from './PreviousNextStep';
 import {
   ContainerMain,
   ContainerInput,
@@ -12,7 +12,8 @@ import {
   Error,
   styleSelect
 } from '../assets/styles';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
+import { useTranslation } from 'react-i18next';
 
 const Select = ({
   name,
@@ -26,9 +27,9 @@ const Select = ({
   type,
   validate,
   options,
-  subItem,
   items
 }) => {
+  const { t } = useTranslation('translation');
   const dispatch = useDispatch();
   const updateValFromStore = useDebouncedCallback((key, val, child) => {
     dispatch(saveData({ key, val, child }));
@@ -43,42 +44,29 @@ const Select = ({
             items.map((e, i) => {
               return (
                 <ItemZone key={i}>
-                  {e.childName === 'covered' && data.has !== 'Yes' ? (
-                    <></>
-                  ) : (
-                    <>
-                      <LabelInput>{e.label}</LabelInput>
-                      <Field
-                        as={type}
-                        name={e.section}
-                        onChange={(val) => {
-                          handleChange(val);
-                          updateValFromStore(name, val, e.childName);
-                        }}
-                        validate={e.childName !== 'covered' && validate}
-                        style={styleSelect}
-                        values={subItem ? data[e.childName] : data}
-                      >
-                        <option
-                          disabled={
-                            subItem ? data[e.childName] : data ? true : false
-                          }
-                          value={undefined}
-                        >
-                          {type}
-                        </option>
-                        {options &&
-                          options.map((e, idx) => (
-                            <option key={idx}>{e}</option>
-                          ))}
-                      </Field>
-                      {subItem
-                        ? errors[e.childName] && (
-                            <Error>{errors[e.childName]}</Error>
-                          )
-                        : errors[name] && <Error>{errors[name]}</Error>}
-                    </>
-                  )}
+                  <>
+                    <LabelInput>{t(e.label)}</LabelInput>
+                    <Field
+                      as={type}
+                      name={e.section}
+                      onChange={(val) => {
+                        handleChange(val);
+                        updateValFromStore(name, val, e.childName);
+                      }}
+                      validate={validate}
+                      style={styleSelect}
+                      values={data}
+                    >
+                      <option disabled={data ? true : false} value={undefined}>
+                        {t(type)}
+                      </option>
+                      {options &&
+                        options.map((e, idx) => (
+                          <option key={idx}> {e} </option>
+                        ))}
+                    </Field>
+                    {errors[name] && <Error>{t(errors[name])}</Error>}
+                  </>
                 </ItemZone>
               );
             })}

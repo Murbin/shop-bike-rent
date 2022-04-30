@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import shopBikeReducer from '../features/shopBikeState/shopBikeSlice';
+import shopBicycleReducer from '../features/shopBicycleState/shopBicycleSlice';
 import { setupListeners } from '@reduxjs/toolkit/query';
 
 export const store = configureStore({
   reducer: {
-    shopBikeData: shopBikeReducer
+    shopBicycleData: shopBicycleReducer
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

@@ -1,11 +1,13 @@
 import React from 'react';
-import { selectResume } from '../features/shopBikeState/shopBikeSlice';
+import { selectResume } from '../features/shopBicycleState/shopBicycleSlice';
 import { useSelector } from 'react-redux';
 import { eurosDE } from '../utils/helper';
-import Steps from '../components/stepper';
+import Steps from '../components/Stepper';
 import { ContainerResume, Text, Title } from '../assets/styles';
+import { useTranslation } from 'react-i18next';
 
 const Resume = () => {
+  const { t } = useTranslation('translation');
   const { username, type, days, amountRent, points, name } =
     useSelector(selectResume);
 
@@ -13,14 +15,24 @@ const Resume = () => {
     <ContainerResume>
       {' '}
       <Steps />
-      <Title>Data of Rent </Title>
-      <Text>Name : {username}</Text>
-      <Text>Type: {type}</Text>
-      <Text>Points: {points}</Text>
-      <Text>Days: {days}</Text>
-      <Text>Bike: {name}</Text>
+      <Title>{t('resume.info-data')} </Title>
+      <Text>
+        {t('name')} : {username}
+      </Text>
+      <Text>
+        {t('type')} : {type}
+      </Text>
+      <Text>
+        {t('days')} : {days}
+      </Text>
+      <Text>
+        {t('bicycle')}: {name}
+      </Text>
+      <Text>
+        {t('points')}: {points}
+      </Text>
       <Title>
-        Amount Rent : {amountRent ? eurosDE.format(amountRent) : 0}{' '}
+        {t('amount-rental')} : {amountRent ? eurosDE.format(amountRent) : 0}{' '}
       </Title>
     </ContainerResume>
   );

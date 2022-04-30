@@ -1,11 +1,13 @@
 import React from 'react';
-import { stepCompleted } from '../features/shopBikeState/shopBikeSlice';
+import { stepCompleted } from '../features/shopBicycleState/shopBicycleSlice';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { ContainerMain, MarginTop } from '../assets/styles';
 import { useFormikContext } from 'formik';
+import { useTranslation } from 'react-i18next';
 
 const PreviousNextStep = ({ prev, nxt, name, errors, value, validate }) => {
+  const { t } = useTranslation('translation');
   const dispatch = useDispatch();
   const { setErrors } = useFormikContext();
 
@@ -28,11 +30,10 @@ const PreviousNextStep = ({ prev, nxt, name, errors, value, validate }) => {
           }}
           to={prev}
         >
-          Previous
+          {t('previous')}
         </Link>
         <Link
           onClick={() => {
-            console.log('name', name);
             validate(
               name !== 'price' ? name : { target: { value: value } },
               setErrors
@@ -46,7 +47,7 @@ const PreviousNextStep = ({ prev, nxt, name, errors, value, validate }) => {
           }}
           to={errors[name] || !value ? '#' : nxt}
         >
-          Next
+          {t('next')}
         </Link>
       </MarginTop>
     </ContainerMain>

@@ -1,0 +1,35 @@
+{
+    "username": "Nombre",
+    "Type" : "Tipo",
+    "Days": "Días",
+    "select" : "Selecciona",
+    "electrics" : "Eléctricos",
+    "old" : "Antiguos",
+    "normal" : "Normal",
+    "Required field" :"Campo Requerido",
+    "group-by-card": {
+        "rent":  "Renta" 
+      },
+    "invoice" : {
+        "history" : "Historia"
+    },
+    "history" : {
+        "history-rent" : "Historial de Alquileres",
+        "id" : "Id"
+    },
+    "image"  : {
+        "title" : "Agrega bauch de pago"
+    },
+    "previous" : "Anterior",
+    "next" : "Siguiente",
+    "resume" : {
+        "info-data" : "Información del Alquiler"
+    },
+    "name" : "Nombre",
+    "days" : "Días",
+    "type" : "Tipo",
+    "bicycle" : "Bicicleta",
+    "amount" : "Cantidad",
+    "points" : "Puntos",
+    "amount-rental" : "Total del Alquiler"
+}

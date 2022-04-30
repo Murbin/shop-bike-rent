@@ -6,22 +6,31 @@ import Button from 'react-bootstrap/Button';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   selectType,
-  selectBikes,
-  updateAmount,
-  selectAmountRent
-} from '../features/shopBikeState/shopBikeSlice';
-import { anotherAsyncThunk } from '../features/shopBikeState/apis/listBikes';
+  selectAmountRent,
+  selectBicycles
+} from '../features/shopBicycleState/shopBicycleSlice';
+import { anotherAsyncThunk } from '../features/shopBicycleState/apis/listBicycles';
 import { useDebouncedCallback } from 'use-debounce';
-import Resume from '../pages/resume';
+import Resume from '../pages/Resume';
 import { eurosDE } from '../utils/helper';
 import { ContainerMain, ContainerInput } from '../assets/styles';
-import Layout from '../components/layout';
-import PreviousNextStep from '../components/previousNextStep';
+import Layout from '../components/Layout';
+import PreviousNextStep from '../components/PreviousNextStep';
+import { useTranslation } from 'react-i18next';
 
-const GroupCardByType = ({ name, errors, validateField, previous, next }) => {
+const GroupCardByType = ({
+  name,
+  getData,
+  saveData,
+  errors,
+  validateField,
+  previous,
+  next
+}) => {
+  const { t } = useTranslation('translation');
   const dispatch = useDispatch();
   const type = useSelector(selectType);
-  const bikes = useSelector(selectBikes);
+  const bicycles = useSelector(selectBicycles);
   const amount = useSelector(selectAmountRent);
 
   useEffect(() => {
@@ -29,8 +38,8 @@ const GroupCardByType = ({ name, errors, validateField, previous, next }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
 
-  const selectedBike = useDebouncedCallback((key, val, name) => {
-    dispatch(updateAmount({ key, val, name }));
+  const selectedBicycle = useDebouncedCallback((key, val, name) => {
+    dispatch(saveData({ key, val, name }));
   }, 250);
 
   return (
@@ -43,14 +52,14 @@ const GroupCardByType = ({ name, errors, validateField, previous, next }) => {
               width: '100%'
             }}
           >
-            {bikes &&
-              bikes.map((bike) => {
+            {bicycles &&
+              bicycles.map((bicycle) => {
                 return (
                   <Col
                     md={4}
                     xs={12}
                     style={{ marginBottom: 10 }}
-                    key={bike.id}
+                    key={bicycle.id}
                   >
                     <Card
                       style={{
@@ -59,14 +68,14 @@ const GroupCardByType = ({ name, errors, validateField, previous, next }) => {
                         margin: '0px auto'
                       }}
                     >
-                      <Card.Img src={bike.image} style={{}} />
+                      <Card.Img src={bicycle.image} style={{}} />
 
                       <Card.Body style={{ height: '25%' }}>
                         <Card.Title
                           style={{ fontSize: 15 }}
                           className="text-muted "
                         >
-                          {bike.name}
+                          {bicycle.name}
                         </Card.Title>
                       </Card.Body>
                       <Card.Footer
@@ -78,16 +87,20 @@ const GroupCardByType = ({ name, errors, validateField, previous, next }) => {
                             fontSize: 20
                           }}
                         >
-                          {eurosDE.format(bike.price)}
+                          {eurosDE.format(bicycle.price)}
                         </small>
                       </Card.Footer>
                       <Button
                         style={{ background: '#6085FC' }}
                         onClick={() =>
-                          selectedBike('amountRent', bike.price, bike.name)
+                          selectedBicycle(
+                            'amountRent',
+                            bicycle.price,
+                            bicycle.name
+                          )
                         }
                       >
-                        Rent
+                        {t('group-by-card.rent')}
                       </Button>
                     </Card>
                   </Col>

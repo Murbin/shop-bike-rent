@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Navbar from './navbar';
-import Filter from './filter';
+import Navbar from './Navbar';
+import Filter from './Filter';
 
 const DashBoard = ({ children, showNavbar, showFilter, addBackground }) => {
   return (

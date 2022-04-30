@@ -1,49 +1,36 @@
 import * as ROUTES from '../utils/urls';
-import Home from '../pages/home';
-import Catalogue from '../pages/catalogue';
-import Input from './input';
-import Select from './select';
-import Image from './image';
+import Home from '../pages/Home';
+import Catalogue from '../pages/Catalogue';
+import Input from './Input';
+import Select from './Select';
+import Image from './Image';
 import {
   selectName,
   selectType,
   selectDaysRent,
   selectImage,
-  selectBikes,
+  selectBicycles,
   updateImage,
-  updateValueInput
-} from '../features/shopBikeState/shopBikeSlice';
+  updateValueInput,
+  updateAmount
+} from '../features/shopBicycleState/shopBicycleSlice';
 import { validateEmpty, types, maxDays } from '../utils/helper';
-import GroupCardByType from './groupCardByType';
-import Invoice from '../pages/invoice';
-import History from '../pages/history';
+import GroupCardByType from './GroupCardByType';
+import Invoice from '../pages/Invoice';
+import History from '../pages/History';
 
-export const Pages = {
+export const pages = {
   content: {
     body: [
       {
         _uid: '0',
         component: Home,
-        path: ROUTES.HOME,
-        name: undefined,
-        getData: undefined,
-        saveData: undefined,
-        placeholder: undefined,
-        type: undefined,
-        validate: undefined,
-        description: 'Page Home'
+        path: ROUTES.HOME
       },
       {
         _uid: '1',
         component: Catalogue,
-        path: ROUTES.CATALOGUE,
-        name: 'Catalogue',
-        getData: undefined,
-        saveData: undefined,
-        placeholder: 'Adams Smith',
-        type: 'text',
-        validate: undefined,
-        description: 'Page Catalogue'
+        path: ROUTES.CATALOGUE
       },
       {
         _uid: '2',
@@ -53,29 +40,24 @@ export const Pages = {
         getData: selectName,
         saveData: updateValueInput,
         previous: ROUTES.HOME,
-        next: ROUTES.TYPE_BIKE,
+        next: ROUTES.TYPE_BICYCLE,
         placeholder: 'Adams Smith',
         type: 'text',
-        validate: validateEmpty,
-        description: 'RENT FORM REQUESTS THE NAME OF THE USER WHO RENT A BIKE'
+        validate: validateEmpty
       },
       {
         _uid: '3',
         component: Select,
-        path: ROUTES.TYPE_BIKE,
+        path: ROUTES.TYPE_BICYCLE,
         name: 'type',
         getData: selectType,
         saveData: updateValueInput,
         previous: ROUTES.RENT_FORM,
         next: ROUTES.DAYS_RENT,
-        placeholder: undefined,
         type: 'select',
         validate: validateEmpty,
         options: types,
-        choice: null,
-        description: 'REQUESTS TYPE OF RENT',
-        subItem: false,
-        items: [{ id: 1, section: 'type', label: 'Type', childName: '' }]
+        items: [{ id: 1, section: 'type', label: 'Type' }]
       },
       {
         _uid: '4',
@@ -84,35 +66,23 @@ export const Pages = {
         name: 'days',
         getData: selectDaysRent,
         saveData: updateValueInput,
-        previous: ROUTES.TYPE_BIKE,
-        next: ROUTES.BIKE_RENT,
-        placeholder: undefined,
+        previous: ROUTES.TYPE_BICYCLE,
+        next: ROUTES.BICYCLE_RENT,
         type: 'select',
         validate: validateEmpty,
         options: maxDays,
-        choice: null,
-        description: 'REQUESTS DAYS OF RENT',
-        subItem: false,
-        items: [{ id: 1, section: 'days', label: 'Days', childName: '' }]
+        items: [{ id: 1, section: 'days', label: 'Days' }]
       },
       {
         _uid: '5',
         component: GroupCardByType,
-        path: ROUTES.BIKE_RENT,
+        path: ROUTES.BICYCLE_RENT,
         name: 'amountRent',
-        getData: selectBikes,
-        saveData: undefined,
+        getData: selectBicycles,
+        saveData: updateAmount,
         previous: ROUTES.DAYS_RENT,
         next: ROUTES.PAYMENT_RENT,
-        placeholder: undefined,
-        type: undefined,
-        validate: validateEmpty,
-        options: undefined,
-        choice: undefined,
-        description: 'SELECT A BIKE',
-        subItem: false,
-        items: undefined,
-        bikes: selectBikes
+        validate: validateEmpty
       },
       {
         _uid: '6',
@@ -121,53 +91,21 @@ export const Pages = {
         name: 'image',
         getData: selectImage,
         saveData: updateImage,
-        child: undefined,
-        previous: ROUTES.BIKE_RENT,
+        previous: ROUTES.BICYCLE_RENT,
         next: ROUTES.RESUME,
-        placeholder: 'Click to load a payment bauch',
-        type: 'file',
-        validate: undefined,
-        options: undefined,
-        choice: undefined,
-        description: 'REQUESTS THE IMAGE OF THE PAYMENT',
-        subItem: undefined,
-        items: undefined
+        type: 'file'
       },
       {
         _uid: '7',
         component: Invoice,
         path: ROUTES.RESUME,
-        name: 'Invoice Resume',
-        getData: undefined,
-        saveData: undefined,
         previous: ROUTES.PAYMENT_RENT,
-        next: ROUTES.HOME,
-        placeholder: undefined,
-        type: undefined,
-        validate: undefined,
-        options: undefined,
-        choice: undefined,
-        description: 'RESUME INVOICE',
-        subItem: false,
-        items: undefined
+        next: ROUTES.HISTORY_RENT
       },
       {
         _uid: '8',
         component: History,
-        path: ROUTES.HISTORY_RENT,
-        name: 'history',
-        getData: undefined,
-        saveData: undefined,
-        previous: undefined,
-        next: undefined,
-        placeholder: undefined,
-        type: undefined,
-        validate: undefined,
-        options: undefined,
-        choice: undefined,
-        description: 'HISTORY RENTS',
-        subItem: false,
-        items: undefined
+        path: ROUTES.HISTORY_RENT
       }
     ]
   }

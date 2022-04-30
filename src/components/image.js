@@ -1,14 +1,15 @@
 import React from 'react';
 import { useDebouncedCallback } from 'use-debounce';
 import { useDispatch, useSelector } from 'react-redux';
-import Resume from '../pages/resume';
-import PreviousNextStep from '../components/previousNextStep';
+import Resume from '../pages/Resume';
+import PreviousNextStep from '../components/PreviousNextStep';
 import {
   ContainerMain,
   BackgroundDepartment,
   LabelInput
 } from '../assets/styles';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
+import { useTranslation } from 'react-i18next';
 
 const Image = ({
   name,
@@ -18,9 +19,9 @@ const Image = ({
   saveData,
   previous,
   next,
-  placeholder,
   type
 }) => {
+  const { t } = useTranslation('translation');
   const dispatch = useDispatch();
   const updateValFromStore = useDebouncedCallback((key, val) => {
     dispatch(saveData({ key, val }));
@@ -40,7 +41,7 @@ const Image = ({
       <ContainerMain>
         <BackgroundDepartment>
           {data ? <img src={data} width={'70%'} alt={'bauch'} /> : null}
-          <LabelInput>{placeholder}</LabelInput>
+          <LabelInput>{t('image.title')}</LabelInput>
           <input
             name={name}
             id="my-upload-btn"

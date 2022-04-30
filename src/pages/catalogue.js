@@ -1,22 +1,21 @@
 import React, { useEffect } from 'react';
-import { incrementAsync } from '../features/shopBikeState/apis/listBikes';
-import Layout from '../components/layout';
+import { incrementAsync } from '../features/shopBicycleState/apis/listBicycles';
+import Layout from '../components/Layout';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectBikes } from '../features/shopBikeState/shopBikeSlice';
-import GroupCards from '../components/groupCard';
+import { selectBicycles } from '../features/shopBicycleState/shopBicycleSlice';
+import GroupCards from '../components/GroupCard';
 
 const Catalogue = () => {
   const dispatch = useDispatch();
-  const bikes = useSelector(selectBikes);
+  const bicycles = useSelector(selectBicycles);
 
   useEffect(() => {
     dispatch(incrementAsync());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
 
   return (
     <Layout showNavbar showFilter>
-      <GroupCards bikes={bikes} />
+      <GroupCards bicycles={bicycles} />
     </Layout>
   );
 };

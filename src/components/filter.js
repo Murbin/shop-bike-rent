@@ -1,5 +1,5 @@
 import React from 'react';
-import { anotherAsyncThunk } from '../features/shopBicycleState/apis/listBicycles';
+import { getBicyclesByType } from '../features/shopBicycleState/apis/listBicycles';
 import { useDispatch } from 'react-redux';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
@@ -13,7 +13,7 @@ const Filter = () => {
 
   const handleFilter = (e) => {
     const type = e.target.value;
-    dispatch(anotherAsyncThunk(type));
+    dispatch(getBicyclesByType(type));
   };
 
   return (

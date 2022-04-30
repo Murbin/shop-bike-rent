@@ -14,7 +14,7 @@ mock.onGet('/bicycles').reply(200, {
   bicycles: bicycles
 });
 
-export const incrementAsync = createAsyncThunk(
+export const getAllBicycles = createAsyncThunk(
   'shopBikeData/fetchBicycles',
   async () => {
     return await axios.get('/bicycles').then((res) => {
@@ -37,7 +37,7 @@ mock.onGet('bicyclesNormal', { params: { searchText: 'normal' } }).reply(200, {
   bicyclesNormal
 });
 
-export const anotherAsyncThunk = createAsyncThunk(
+export const getBicyclesByType = createAsyncThunk(
   'shopBikeData',
   async (search) => {
     if (search === 'electrics') {

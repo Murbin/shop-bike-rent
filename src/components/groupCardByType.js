@@ -9,7 +9,7 @@ import {
   selectAmountRent,
   selectBicycles
 } from '../features/shopBicycleState/shopBicycleSlice';
-import { anotherAsyncThunk } from '../features/shopBicycleState/apis/listBicycles';
+import { getBicyclesByType } from '../features/shopBicycleState/apis/listBicycles';
 import { useDebouncedCallback } from 'use-debounce';
 import Resume from '../pages/Resume';
 import { eurosDE } from '../utils/helper';
@@ -33,7 +33,7 @@ const GroupCardByType = ({
   const amount = useSelector(selectAmountRent);
 
   useEffect(() => {
-    dispatch(anotherAsyncThunk(type));
+    dispatch(getBicyclesByType(type));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
 

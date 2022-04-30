@@ -1,15 +1,14 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
 import { eurosDE } from '../utils/helper';
-import '../assets/groupCard.css';
+import { RowGroupCard } from '../assets/styles';
 
 const GroupCards = (props) => {
   const { bicycles } = props;
 
   return (
-    <Row className="containerGroupCard">
+    <RowGroupCard>
       {bicycles &&
         bicycles.map((bicycles) => {
           return (
@@ -28,7 +27,7 @@ const GroupCards = (props) => {
             </Col>
           );
         })}
-    </Row>
+    </RowGroupCard>
   );
 };
 

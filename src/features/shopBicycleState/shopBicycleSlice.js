@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { incrementAsync, anotherAsyncThunk } from './apis/listBicycles';
+import { getAllBicycles, getBicyclesByType } from './apis/listBicycles';
 
 const initialState = {
   toggled: false,
@@ -88,17 +88,17 @@ export const shopBicycleDataSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(incrementAsync.pending, (state) => {
+      .addCase(getAllBicycles.pending, (state) => {
         state.status = 'loading';
       })
-      .addCase(incrementAsync.fulfilled, (state, action) => {
+      .addCase(getAllBicycles.fulfilled, (state, action) => {
         state.bicycles = action.payload;
         state.status = 'idle';
       })
-      .addCase(anotherAsyncThunk.pending, (state, action) => {
+      .addCase(getBicyclesByType.pending, (state, action) => {
         state.status = 'loading';
       })
-      .addCase(anotherAsyncThunk.fulfilled, (state, action) => {
+      .addCase(getBicyclesByType.fulfilled, (state, action) => {
         state.bicycles = action.payload;
       });
   }

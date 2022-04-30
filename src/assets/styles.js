@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Row from 'react-bootstrap/Row';
 
 export const ContainerLoader = styled.div`
   width: 100%;
@@ -240,3 +241,9 @@ export const styleCol = {
 export const styleWidth = { width: 200 };
 
 export const imgStyle = { width: '70%', maxHeight: '300px' };
+
+export const RowGroupCard = styled(Row)`
+  justify-content: space-around;
+  width: 80%;
+  margin: 20px auto !important;
+`;

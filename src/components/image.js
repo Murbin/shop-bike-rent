@@ -1,5 +1,4 @@
 import React from 'react';
-import { useDebouncedCallback } from 'use-debounce';
 import { useDispatch, useSelector } from 'react-redux';
 import Resume from '../pages/Resume';
 import PreviousNextStep from '../components/PreviousNextStep';
@@ -23,10 +22,11 @@ const Image = ({
 }) => {
   const { t } = useTranslation('translation');
   const dispatch = useDispatch();
-  const updateValFromStore = useDebouncedCallback((key, val) => {
-    dispatch(saveData({ key, val }));
-  }, 250);
   const data = useSelector(getData);
+
+  const updateValFromStore = (key, val) => {
+    dispatch(saveData({ key, val }));
+  };
 
   const handleLoadLocalFile = (event) => {
     event.preventDefault();

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { incrementAsync } from '../features/shopBicycleState/apis/listBicycles';
+import { getAllBicycles } from '../features/shopBicycleState/apis/listBicycles';
 import Filter from '../components/Filter';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectBicycles } from '../features/shopBicycleState/shopBicycleSlice';
@@ -10,7 +10,7 @@ const Catalogue = () => {
   const bicycles = useSelector(selectBicycles);
 
   useEffect(() => {
-    dispatch(incrementAsync());
+    dispatch(getAllBicycles());
   }, [dispatch]);
 
   return (

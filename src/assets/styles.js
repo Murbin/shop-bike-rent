@@ -238,3 +238,5 @@ export const styleCol = {
 };
 
 export const styleWidth = { width: 200 };
+
+export const imgStyle = { width: '70%', maxHeight: '300px' };

@@ -6,7 +6,8 @@ import PreviousNextStep from '../components/PreviousNextStep';
 import {
   ContainerMain,
   BackgroundDepartment,
-  LabelInput
+  LabelInput,
+  imgStyle
 } from '../assets/styles';
 import { useTranslation } from 'react-i18next';
 
@@ -38,7 +39,7 @@ const Image = ({
   return (
     <ContainerMain>
       <BackgroundDepartment>
-        {data ? <img src={data} width={'70%'} alt={'bauch'} /> : null}
+        {data ? <img style={imgStyle} src={data} alt={'bauch'} /> : null}
         <LabelInput>{t('image.title')}</LabelInput>
         <input
           name={name}

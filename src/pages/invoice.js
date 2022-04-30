@@ -1,6 +1,5 @@
 import React from 'react';
 import Resume from './Resume';
-import Layout from '../components/Layout';
 import { ContainerReview, ButtonsContainer } from '../assets/styles';
 import Button from '../components/Button';
 import { useDispatch } from 'react-redux';
@@ -20,17 +19,15 @@ const Invoice = ({ previous, next }) => {
   };
 
   return (
-    <Layout showNavbar addBackground>
-      <ContainerReview>
-        <ButtonsContainer>
-          <Button to={previous} label={t('previous')} />
-          <button className="buttonCustom" onClick={handleHistory}>
-            {t('invoice.history')}
-          </button>
-        </ButtonsContainer>
-        <Resume />
-      </ContainerReview>
-    </Layout>
+    <ContainerReview>
+      <ButtonsContainer>
+        <Button to={previous} label={t('previous')} />
+        <button className="buttonCustom" onClick={handleHistory}>
+          {t('invoice.history')}
+        </button>
+      </ButtonsContainer>
+      <Resume />
+    </ContainerReview>
   );
 };
 

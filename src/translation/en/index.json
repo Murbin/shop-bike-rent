@@ -4,7 +4,8 @@
     "select" : "Select",
     "Days": "Days",
     "electrics" : "Electrics",
-    "old" : "Old",
+    "all" : "All",
+    "old" : "Ancient",
     "normal" : "Normal",
     "Required field" :"Required field",
     "group-by-card": {
@@ -31,5 +32,6 @@
     "bicycle" : "Bicycle",
     "amount" : "Amount",
     "points" : "Points",
-    "amount-rental" : "Total Rent"
+    "amount-rental" : "Total Rent",
+    "total-points" : "Total Accumulated Points"
 }

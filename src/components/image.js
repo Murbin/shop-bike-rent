@@ -8,7 +8,6 @@ import {
   BackgroundDepartment,
   LabelInput
 } from '../assets/styles';
-import Layout from '../components/Layout';
 import { useTranslation } from 'react-i18next';
 
 const Image = ({
@@ -37,30 +36,28 @@ const Image = ({
   };
 
   return (
-    <Layout showNavbar>
-      <ContainerMain>
-        <BackgroundDepartment>
-          {data ? <img src={data} width={'70%'} alt={'bauch'} /> : null}
-          <LabelInput>{t('image.title')}</LabelInput>
-          <input
-            name={name}
-            id="my-upload-btn"
-            type={type}
-            accept=".jpg, .jpeg, .png .svg"
-            onChange={handleLoadLocalFile}
-          />
-          <PreviousNextStep
-            prev={previous}
-            nxt={next}
-            name={name}
-            errors={errors}
-            value={data}
-            validate={() => {}}
-          />
-        </BackgroundDepartment>
-        <Resume />
-      </ContainerMain>
-    </Layout>
+    <ContainerMain>
+      <BackgroundDepartment>
+        {data ? <img src={data} width={'70%'} alt={'bauch'} /> : null}
+        <LabelInput>{t('image.title')}</LabelInput>
+        <input
+          name={name}
+          id="my-upload-btn"
+          type={type}
+          accept=".jpg, .jpeg, .png .svg"
+          onChange={handleLoadLocalFile}
+        />
+        <PreviousNextStep
+          prev={previous}
+          nxt={next}
+          name={name}
+          errors={errors}
+          value={data}
+          validate={() => {}}
+        />
+      </BackgroundDepartment>
+      <Resume />
+    </ContainerMain>
   );
 };
 

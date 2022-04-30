@@ -11,7 +11,6 @@ import {
   Error,
   styleInput
 } from '../assets/styles';
-import Layout from '../components/Layout';
 import { useTranslation } from 'react-i18next';
 
 const Input = ({
@@ -35,35 +34,33 @@ const Input = ({
   const data = useSelector(getData);
 
   return (
-    <Layout showNavbar>
-      <ContainerMain>
-        <ContainerInput>
-          <LabelInput>{t(name)}</LabelInput>
-          <Field
-            type={type}
-            name={name}
-            placeholder={placeholder}
-            onChange={(val) => {
-              handleChange(val);
-              updateValFromStore(name, val);
-            }}
-            validate={validate}
-            style={styleInput}
-            values={data}
-          />
-          {errors[name] && <Error>{t(errors[name])}</Error>}
-          <PreviousNextStep
-            prev={previous}
-            nxt={next}
-            name={name}
-            errors={errors}
-            value={data}
-            validate={validateField}
-          />
-        </ContainerInput>
-        <Resume />
-      </ContainerMain>
-    </Layout>
+    <ContainerMain>
+      <ContainerInput>
+        <LabelInput>{t(name)}</LabelInput>
+        <Field
+          type={type}
+          name={name}
+          placeholder={placeholder}
+          onChange={(val) => {
+            handleChange(val);
+            updateValFromStore(name, val);
+          }}
+          validate={validate}
+          style={styleInput}
+          values={data}
+        />
+        {errors[name] && <Error>{t(errors[name])}</Error>}
+        <PreviousNextStep
+          prev={previous}
+          nxt={next}
+          name={name}
+          errors={errors}
+          value={data}
+          validate={validateField}
+        />
+      </ContainerInput>
+      <Resume />
+    </ContainerMain>
   );
 };
 

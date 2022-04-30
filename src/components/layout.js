@@ -1,16 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Navbar from './Navbar';
-import Filter from './Filter';
 
 const DashBoard = ({ children, showNavbar, showFilter, addBackground }) => {
   return (
     <div style={{ display: 'flex', flexDirection: 'row' }}>
-      {showNavbar && <Navbar />}
+      <Navbar />
       <div
         style={{ width: '100%', background: addBackground ? '#6085FC' : null }}
       >
-        {showFilter && <Filter />}
         <div>{children}</div>
       </div>
     </div>

@@ -3,9 +3,10 @@
     "Type" : "Tipo",
     "Days": "Días",
     "select" : "Selecciona",
-    "electrics" : "Eléctricos",
-    "old" : "Antiguos",
+    "electrics" : "Eléctricas",
+    "old" : "Antiguas",
     "normal" : "Normal",
+    "all" : "Todas",
     "Required field" :"Campo Requerido",
     "group-by-card": {
         "rent":  "Renta" 
@@ -31,5 +32,6 @@
     "bicycle" : "Bicicleta",
     "amount" : "Cantidad",
     "points" : "Puntos",
-    "amount-rental" : "Total del Alquiler"
+    "amount-rental" : "Total del Alquiler",
+    "total-points" : "Puntos Totales Acumulados"
 }

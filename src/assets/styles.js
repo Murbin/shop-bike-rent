@@ -1,5 +1,13 @@
 import styled from 'styled-components';
 
+export const ContainerLoader = styled.div`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const ContainerHome = styled.button`
   width: 70%;
   margin: 10px auto;
@@ -109,8 +117,9 @@ export const Text = styled.p`
   font-size: 15px;
   text-align: center;
   color: black;
-  margin: 10px;
-  @media (min-width: 650px) {
+  margin: 6px;
+  padding: 5px;
+  @media (min-width: 1100px) {
     font-size: 19px;
   }
 `;
@@ -123,7 +132,6 @@ export const Title = styled(Text)`
 export const ContainerStepper = styled.div`
   width: 100%;
   margin-bottom: 20px;
-
   @media (min-width: 600px) {
     padding-top: 30px;
   }
@@ -132,6 +140,7 @@ export const ContainerStepper = styled.div`
 export const ContainerReview = styled.div`
   display: flex;
   width: 100%;
+  background: #6085fc;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -211,5 +220,21 @@ export const ButtonsContainer = styled.div`
     width: 40%;
     height: 100vh;
     padding-bottom: 0px;
+    padding: 6px;
   }
 `;
+
+export const styleRow = {
+  justifyContent: 'space-around',
+  width: '80%',
+  margin: '20px auto'
+};
+
+export const styleCol = {
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'flex-start'
+};
+
+export const styleWidth = { width: 200 };

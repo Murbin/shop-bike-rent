@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { incrementAsync } from '../features/shopBicycleState/apis/listBicycles';
-import Layout from '../components/Layout';
+import Filter from '../components/Filter';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectBicycles } from '../features/shopBicycleState/shopBicycleSlice';
 import GroupCards from '../components/GroupCard';
@@ -14,9 +14,10 @@ const Catalogue = () => {
   }, [dispatch]);
 
   return (
-    <Layout showNavbar showFilter>
+    <>
+      <Filter />
       <GroupCards bicycles={bicycles} />
-    </Layout>
+    </>
   );
 };
 

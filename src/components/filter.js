@@ -4,8 +4,11 @@ import { useDispatch } from 'react-redux';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import { useTranslation } from 'react-i18next';
+import { styleRow, styleCol, styleWidth } from '../assets/styles';
 
 const Filter = () => {
+  const { t } = useTranslation('translation');
   const dispatch = useDispatch();
 
   const handleFilter = (e) => {
@@ -14,31 +17,17 @@ const Filter = () => {
   };
 
   return (
-    <Row
-      style={{
-        justifyContent: 'space-around',
-        width: '80%',
-        margin: '20px auto'
-      }}
-    >
-      <Col
-        md={12}
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'flex-start'
-        }}
-      >
+    <Row style={styleRow}>
+      <Col md={12} style={styleCol}>
         <Form.Select
           aria-label="Select a type"
-          style={{ width: 200 }}
+          style={styleWidth}
           onChange={(e) => handleFilter(e)}
         >
-          <option value="all">All</option>
-          <option value="electrics">Electrics</option>
-          <option value="old">Ancient</option>
-          <option value="normal">Normal</option>
+          <option value="all">{t('all')}</option>
+          <option value="electrics">{t('electrics')}</option>
+          <option value="old">{t('old')}</option>
+          <option value="normal">{t('normal')}</option>
         </Form.Select>
       </Col>
     </Row>

@@ -1,9 +1,6 @@
+import { lazy } from 'react';
 import * as ROUTES from '../utils/urls';
-import Home from '../pages/Home';
-import Catalogue from '../pages/Catalogue';
-import Input from './Input';
-import Select from './Select';
-import Image from './Image';
+import { validateEmpty, types, maxDays } from '../utils/helper';
 import {
   selectName,
   selectType,
@@ -14,10 +11,15 @@ import {
   updateValueInput,
   updateAmount
 } from '../features/shopBicycleState/shopBicycleSlice';
-import { validateEmpty, types, maxDays } from '../utils/helper';
-import GroupCardByType from './GroupCardByType';
-import Invoice from '../pages/Invoice';
-import History from '../pages/History';
+
+const Home = lazy(() => import('../pages/Home'));
+const Catalogue = lazy(() => import('../pages/Catalogue'));
+const Input = lazy(() => import('./Input'));
+const Select = lazy(() => import('./Select'));
+const Image = lazy(() => import('./Image'));
+const Invoice = lazy(() => import('../pages/Invoice'));
+const History = lazy(() => import('../pages/History'));
+const GroupCardByType = lazy(() => import('./GroupCardByType'));
 
 export const pages = {
   content: {

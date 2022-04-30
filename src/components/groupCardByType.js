@@ -1,8 +1,5 @@
 import React, { useEffect } from 'react';
-import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-import Button from 'react-bootstrap/Button';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   selectType,
@@ -13,7 +10,17 @@ import { getBicyclesByType } from '../features/shopBicycleState/apis/listBicycle
 import { useDebouncedCallback } from 'use-debounce';
 import Resume from '../pages/Resume';
 import { eurosDE } from '../utils/helper';
-import { ContainerMain, ContainerInput } from '../assets/styles';
+import {
+  ContainerMain,
+  ContainerInput,
+  CardContainer,
+  CardImg,
+  CardBody,
+  CardTitle,
+  CardFooter,
+  RowGroupByType,
+  ButtonRent
+} from '../assets/styles';
 import PreviousNextStep from '../components/PreviousNextStep';
 import { useTranslation } from 'react-i18next';
 
@@ -44,50 +51,18 @@ const GroupCardByType = ({
   return (
     <ContainerMain>
       <ContainerInput>
-        <Row
-          style={{
-            justifyContent: 'space-around',
-            width: '100%'
-          }}
-        >
+        <RowGroupByType>
           {bicycles &&
             bicycles.map((bicycle) => {
               return (
-                <Col
-                  md={4}
-                  xs={12}
-                  style={{ marginBottom: 10 }}
-                  key={bicycle.id}
-                >
-                  <Card
-                    style={{
-                      width: '100%',
-
-                      margin: '0px auto'
-                    }}
-                  >
-                    <Card.Img src={bicycle.image} style={{}} />
-
-                    <Card.Body style={{ height: '25%' }}>
-                      <Card.Title
-                        style={{ fontSize: 15 }}
-                        className="text-muted "
-                      >
-                        {bicycle.name}
-                      </Card.Title>
-                    </Card.Body>
-                    <Card.Footer style={{ height: '10%', textAlign: 'center' }}>
-                      <small
-                        style={{
-                          fontWeight: 'bold',
-                          fontSize: 20
-                        }}
-                      >
-                        {eurosDE.format(bicycle.price)}
-                      </small>
-                    </Card.Footer>
-                    <Button
-                      style={{ background: '#6085FC' }}
+                <Col md={4} xs={12} key={bicycle.id}>
+                  <CardContainer>
+                    <CardImg src={bicycle.image} style={{}} />
+                    <CardBody>
+                      <CardTitle>{bicycle.name}</CardTitle>
+                    </CardBody>
+                    <CardFooter>{eurosDE.format(bicycle.price)}</CardFooter>
+                    <ButtonRent
                       onClick={() =>
                         selectedBicycle(
                           'amountRent',
@@ -97,12 +72,12 @@ const GroupCardByType = ({
                       }
                     >
                       {t('group-by-card.rent')}
-                    </Button>
-                  </Card>
+                    </ButtonRent>
+                  </CardContainer>
                 </Col>
               );
             })}
-        </Row>
+        </RowGroupByType>
         <PreviousNextStep
           prev={previous}
           nxt={next}

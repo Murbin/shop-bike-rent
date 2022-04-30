@@ -83,7 +83,7 @@ export const bicycles = [
 export const bicyclesElectrics = [
   {
     id: 1,
-    name: 'Bicicleta 3 eléctrica AMSTERDAM – Watt. modelo hombre, cuadro en aluminio, frenos de disco, batería invisible, luces. Posee roles ',
+    name: 'Bicicleta 3 eléctrica AMSTERDAM – Watt. modelo hombre, cuadro en aluminio, frenos de disco, batería invisible',
     price: '400',
     image:
       'https://airbici.es/wp-content/uploads/2019/04/vv-739-foolding-20-300x300.jpg',

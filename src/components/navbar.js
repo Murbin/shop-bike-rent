@@ -14,10 +14,13 @@ import {
   selectToggled
 } from '../features/shopBicycleState/shopBicycleSlice';
 import * as ROUTES from '../utils/urls';
+import { useTranslation } from 'react-i18next';
 import { useWindowWidth } from '@react-hook/window-size';
+import { ContainerNab } from '../assets/styles';
 import i18n from 'i18next';
 
 const Navbar = () => {
+  const { t } = useTranslation('translation');
   const onlyWidth = useWindowWidth();
   const dispatch = useDispatch();
   let toggled = useSelector(selectToggled);
@@ -32,38 +35,32 @@ const Navbar = () => {
   };
 
   return (
-    <div
-      style={{
-        height: '100vh',
-        position: 'sticky',
-        top: 0
-      }}
-    >
+    <ContainerNab>
       <ProSidebar collapsed={onlyWidth > 800 ? toggled : true} width={'200px'}>
         <Menu iconShape="square">
           <MenuItem icon={<FaHome />}>
-            Inicio <Link to="/" />
+            {t('init')} <Link to="/" />
           </MenuItem>
           <MenuItem icon={<FaList />}>
-            Catalogue
+            {t('catalogue')}
             <Link to="/catalogue" />
           </MenuItem>
-          <SubMenu title="Rent" icon={<FaBiking />}>
+          <SubMenu title={t('group-by-card.rent')} icon={<FaBiking />}>
             <MenuItem>
-              New Rent
+              {t('new-rent')}
               <Link to={ROUTES.RENT_FORM} />
             </MenuItem>
             <MenuItem>
-              History Rent
+              {t('histo-rent')}
               <Link to="/history-rent" />
             </MenuItem>
           </SubMenu>
-          <SubMenu title="Languajes" icon={<FaTorah />}>
+          <SubMenu title={t('lng')} icon={<FaTorah />}>
             <MenuItem icon={<FaTorah />} onClick={() => handleLanguaje('es')}>
-              Español
+              {t('spanish')}
             </MenuItem>
             <MenuItem icon={<FaTorah />} onClick={() => handleLanguaje('en')}>
-              English
+              {t('english')}
             </MenuItem>
           </SubMenu>
           {toggled ? (
@@ -76,7 +73,7 @@ const Navbar = () => {
           )}
         </Menu>
       </ProSidebar>
-    </div>
+    </ContainerNab>
   );
 };
 export default Navbar;

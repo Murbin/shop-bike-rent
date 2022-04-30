@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
 export const ContainerLoader = styled.div`
   width: 100%;
@@ -20,18 +24,25 @@ export const ContainerHome = styled.button`
   background: white;
 `;
 
-export const Button = styled.button`
-  background: #6085fc;
-  border-width: 0px;
-  color: white;
-  font-size: 20px;
+export const ButtonLink = styled.button`
+  text-align: center;
+  background: white;
+  width: 100px;
+  padding: 7px;
+  margin-right: 26px;
+  text-decoration: none;
+  color: black;
   font-weight: bold;
-  border-radius: 100px;
-  width: 300px;
-  cursor: pointer;
-  margin-top: 350px;
-  padding: 5px;
+  border-radius: 20px;
+  border-width: 0;
 `;
+
+export const buttonLinkStep = {
+  marginRight: 20,
+  textDecoration: 'none',
+  color: '#6085FC',
+  fontWeight: 'bold'
+};
 
 export const ContainerMain = styled.div`
   width: 100%;
@@ -225,25 +236,87 @@ export const ButtonsContainer = styled.div`
   }
 `;
 
-export const styleRow = {
-  justifyContent: 'space-around',
-  width: '80%',
-  margin: '20px auto'
-};
+export const RowFilter = styled(Row)`
+  justify-content: space-around;
+  width: 80%;
+  margin: 20px auto;
+`;
 
-export const styleCol = {
-  display: 'flex',
-  flexDirection: 'row',
-  alignItems: 'center',
-  justifyContent: 'flex-start'
-};
+export const ColFilter = styled(Col)`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+`;
 
-export const styleWidth = { width: 200 };
+export const FormSelect = styled(Form.Select)`
+  width: 200px;
+`;
 
-export const imgStyle = { width: '70%', maxHeight: '300px' };
+export const Img = styled(Row)`
+  max-height: 300px;
+  width: 70%;
+`;
 
 export const RowGroupCard = styled(Row)`
   justify-content: space-around;
   width: 80%;
   margin: 20px auto !important;
+`;
+
+export const ColCard = styled(Col)`
+  margin: 10px 0px;
+`;
+
+export const CardContainer = styled(Col)`
+  margin: 0px auto;
+  width: 100%;
+`;
+
+export const CardImg = styled(Card.Img)`
+  width: 100%;
+`;
+
+export const CardBody = styled(Card.Body)`
+  height: 30%;
+`;
+
+export const CardTitle = styled(Card.Title)`
+  color: #6c757d;
+  font-size: 15px;
+  text-align: center;
+`;
+
+export const CardFooter = styled(Card.Footer)`
+  margin: 0px auto;
+  padding: 0px;
+  font-size: 17px;
+  text-align: center;
+  font-weight: bold;
+`;
+
+export const RowGroupByType = styled(Row)`
+  justify-content: space-around;
+  width: 100%;
+`;
+
+export const ButtonRent = styled(Button)`
+  background: #6085fc;
+  margin: 10px auto;
+  width: 100%;
+`;
+
+export const ContainerLayout = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+export const ContainerChildren = styled.div`
+  width: 100%;
+`;
+
+export const ContainerNab = styled.div`
+  height: 100vh;
+  position: sticky;
+  top: 0;
 `;

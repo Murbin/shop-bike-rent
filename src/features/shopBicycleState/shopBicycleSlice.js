@@ -9,7 +9,7 @@ const initialState = {
   bicyclesByType: [],
   username: '',
   type: undefined,
-  days: undefined,
+  days: 0,
   amountRent: undefined,
   name: undefined,
   points: undefined,

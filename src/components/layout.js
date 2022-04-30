@@ -1,33 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Navbar from './Navbar';
+import { ContainerLayout, ContainerChildren } from '../assets/styles';
 
-const DashBoard = ({ children, showNavbar, showFilter, addBackground }) => {
+const Layout = ({ children, addBackground }) => {
   return (
-    <div style={{ display: 'flex', flexDirection: 'row' }}>
+    <ContainerLayout>
       <Navbar />
-      <div
-        style={{ width: '100%', background: addBackground ? '#6085FC' : null }}
-      >
-        <div>{children}</div>
-      </div>
-    </div>
+      <ContainerChildren>{children}</ContainerChildren>
+    </ContainerLayout>
   );
 };
 
-DashBoard.propTypes = {
-  children: PropTypes.node.isRequired,
-  showHeader: PropTypes.bool,
-  showNavbar: PropTypes.bool,
-  showPrimaryFooter: PropTypes.bool,
-  showSecondaryFooter: PropTypes.bool
-};
-
-DashBoard.defaultProps = {
-  showHeader: false,
-  showNavbar: false,
-  showPrimaryFooter: false,
-  showSecondaryFooter: false
-};
-
-export default DashBoard;
+export default Layout;

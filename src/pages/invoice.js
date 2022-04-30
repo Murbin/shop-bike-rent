@@ -1,19 +1,25 @@
 import React from 'react';
 import Resume from './Resume';
-import { ContainerReview, ButtonsContainer } from '../assets/styles';
-import Button from '../components/Button';
+import {
+  ContainerReview,
+  ButtonsContainer,
+  ButtonLink
+} from '../assets/styles';
 import { useDispatch } from 'react-redux';
 import { updateHistory } from '../features/shopBicycleState/shopBicycleSlice';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import '../assets/invoice.css';
 
 const Invoice = ({ previous, next }) => {
   const { t } = useTranslation('translation');
   const dispatch = useDispatch();
   let navigate = useNavigate();
 
-  const handleHistory = () => {
+  const handlePrev = () => {
+    navigate(previous);
+  };
+
+  const handleNext = () => {
     dispatch(updateHistory());
     navigate(next);
   };
@@ -21,10 +27,8 @@ const Invoice = ({ previous, next }) => {
   return (
     <ContainerReview>
       <ButtonsContainer>
-        <Button to={previous} label={t('previous')} />
-        <button className="buttonCustom" onClick={handleHistory}>
-          {t('invoice.history')}
-        </button>
+        <ButtonLink onClick={handlePrev}>{t('previous')}</ButtonLink>
+        <ButtonLink onClick={handleNext}>{t('invoice.history')}</ButtonLink>
       </ButtonsContainer>
       <Resume />
     </ContainerReview>

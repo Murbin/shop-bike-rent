@@ -33,5 +33,14 @@
     "amount" : "Cantidad",
     "points" : "Puntos",
     "amount-rental" : "Total del Alquiler",
-    "total-points" : "Puntos Totales Acumulados"
+    "total-points" : "Puntos Totales Acumulados",
+    "Select a type" : "Selecciona un Tipo",
+    "bauch" : "Recibo",
+    "init" : "Inicio",
+    "catalogue" : "Catálogo",
+    "new-rent" : "Nuevo Alquiler",
+    "histo-rent" : "Histórico",
+    "spanish" : "Español",
+    "english" : "Inglés",
+    "lng" : "Idioma"
 }

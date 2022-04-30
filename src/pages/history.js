@@ -13,7 +13,7 @@ const History = () => {
   let sum = 0;
 
   return (
-    <Container className="p-5">
+    <Container>
       <Title>{t('history.history-rent')}</Title>
       <Table striped bordered hover>
         <thead>
@@ -46,7 +46,7 @@ const History = () => {
           })}
         </tbody>
       </Table>
-      <p styles={{ fontSize: 10 }}>
+      <p>
         {t('total-points')} : {sum} *
       </p>
     </Container>

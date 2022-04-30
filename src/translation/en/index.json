@@ -33,5 +33,14 @@
     "amount" : "Amount",
     "points" : "Points",
     "amount-rental" : "Total Rent",
-    "total-points" : "Total Accumulated Points"
+    "total-points" : "Total Accumulated Points",
+    "Select a type" : "Select a type",
+    "bauch" : "bauch",
+    "init" : "Init",
+    "catalogue" : "Catalogue",
+    "new-rent" : "New Rent",
+    "histo-rent" : "History Rent",
+    "spanish" : "Spanish",
+    "english" : "English",
+    "lng" : "Language"
 }

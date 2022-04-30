@@ -5,7 +5,7 @@ const CardCustom = (props) => {
   const { title, content, updated } = props.card;
 
   return (
-    <Card className="text-center my-3">
+    <Card>
       <Card.Header>{updated}</Card.Header>
       <Card.Body>
         <Card.Title>{title}</Card.Title>

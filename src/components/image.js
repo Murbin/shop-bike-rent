@@ -6,7 +6,7 @@ import {
   ContainerMain,
   BackgroundDepartment,
   LabelInput,
-  imgStyle
+  Img
 } from '../assets/styles';
 import { useTranslation } from 'react-i18next';
 
@@ -39,7 +39,7 @@ const Image = ({
   return (
     <ContainerMain>
       <BackgroundDepartment>
-        {data ? <img style={imgStyle} src={data} alt={'bauch'} /> : null}
+        {data ? <Img src={data} alt={t('bauch')} /> : null}
         <LabelInput>{t('image.title')}</LabelInput>
         <input
           name={name}

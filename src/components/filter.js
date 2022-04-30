@@ -1,11 +1,8 @@
 import React from 'react';
 import { getBicyclesByType } from '../features/shopBicycleState/apis/listBicycles';
 import { useDispatch } from 'react-redux';
-import Form from 'react-bootstrap/Form';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
 import { useTranslation } from 'react-i18next';
-import { styleRow, styleCol, styleWidth } from '../assets/styles';
+import { RowFilter, ColFilter, FormSelect } from '../assets/styles';
 
 const Filter = () => {
   const { t } = useTranslation('translation');
@@ -17,20 +14,19 @@ const Filter = () => {
   };
 
   return (
-    <Row style={styleRow}>
-      <Col md={12} style={styleCol}>
-        <Form.Select
-          aria-label="Select a type"
-          style={styleWidth}
+    <RowFilter>
+      <ColFilter md={12}>
+        <FormSelect
+          aria-label={t('aria-label')}
           onChange={(e) => handleFilter(e)}
         >
           <option value="all">{t('all')}</option>
           <option value="electrics">{t('electrics')}</option>
           <option value="old">{t('old')}</option>
           <option value="normal">{t('normal')}</option>
-        </Form.Select>
-      </Col>
-    </Row>
+        </FormSelect>
+      </ColFilter>
+    </RowFilter>
   );
 };
 

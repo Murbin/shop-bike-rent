@@ -14,14 +14,11 @@ export const ContainerLoader = styled.div`
 `;
 
 export const ContainerHome = styled.button`
-  width: 70%;
-  margin: 10px auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  position: relative;
   border-width: 0;
-  background: white;
+  background: #6085fc;
 `;
 
 export const ButtonLink = styled.button`
@@ -253,7 +250,7 @@ export const FormSelect = styled(Form.Select)`
   width: 200px;
 `;
 
-export const Img = styled(Row)`
+export const Img = styled.img`
   max-height: 300px;
   width: 70%;
 `;

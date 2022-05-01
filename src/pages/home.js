@@ -1,14 +1,11 @@
-import React from 'react';
-import { ContainerHome, Title } from '../assets/styles';
-import CardCustom from '../components/Card';
-import { cardsData, titleHome } from '../utils/home-data';
+import React, { lazy } from 'react';
+import { ContainerHome } from '../assets/styles';
+
+const Animation3D = lazy(() => import('../3d/Animation3D'));
 
 const Home = () => (
   <ContainerHome>
-    <Title>{titleHome}</Title>
-    {cardsData.map((card, i) => {
-      return <CardCustom card={card} key={i} />;
-    })}
+    <Animation3D />
   </ContainerHome>
 );
 

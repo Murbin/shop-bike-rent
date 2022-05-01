@@ -1,11 +1,11 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { pages } from './pages';
+import { components } from './components';
 
 const RouteFactory = (props) => {
   return (
     <Routes>
-      {pages.content.body.map((e, key) => {
+      {components.content.body.map((e, key) => {
         return (
           <Route
             key={key}

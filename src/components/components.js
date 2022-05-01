@@ -21,7 +21,7 @@ const Invoice = lazy(() => import('../pages/Invoice'));
 const History = lazy(() => import('../pages/History'));
 const GroupCardByType = lazy(() => import('./GroupCardByType'));
 
-export const pages = {
+export const components = {
   content: {
     body: [
       {

@@ -2,9 +2,10 @@ import * as THREE from 'three';
 import { useRef, useState, useMemo, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Text, TrackballControls } from '@react-three/drei';
-import randomWord from 'random-words';
+import { mywords } from '../../utils/helper';
+import { TextAnimation } from '../../assets/styles';
 
-function Word({ children, ...props }) {
+const Word = ({ children, ...props }) => {
   const color = new THREE.Color();
   const fontProps = {
     fontSize: 2,
@@ -15,14 +16,14 @@ function Word({ children, ...props }) {
   const ref = useRef();
   const [hovered, setHovered] = useState(false);
   const over = (e) => {
-    e.stopPropagation();
+    // e.stopPropagation();
     setHovered(true);
   };
   const out = () => setHovered(false);
   // Change the mouse cursor on hover
   useEffect(() => {
-    if (hovered) document.body.style.cursor = 'pointer';
-    return () => (document.body.style.cursor = 'auto');
+    if (hovered) document.getElementById('word').style.cursor = 'pointer';
+    return () => (document.getElementById('word').style.cursor = 'pointer');
   }, [hovered]);
   // Tie component to the render-loop
   useFrame(({ camera }) => {
@@ -44,65 +45,16 @@ function Word({ children, ...props }) {
       children={children}
     />
   );
-}
+};
 
-function Cloud({ count = 4, radius = 20 }) {
+const Cloud = ({ count = 4, radius = 20 }) => {
   // Create a count x count random words with spherical distribution
   const words = useMemo(() => {
-    console.log('randomWord()', randomWord());
     const temp = [];
-    const mywords = [
-      'bianchi',
-      'orbea',
-      'mtb',
-      'frime',
-      'road',
-      'best',
-      'chisel',
-      'turbo',
-      'weel',
-      'montain',
-      'proper',
-      'turbo levo',
-      's-works',
-      'epic evo',
-      'oxigen',
-      'electric',
-      'ancient',
-      'normal',
-      'kona',
-      'cruiser',
-      'omafiet',
-      'proper',
-      'bianchi',
-      'orbea',
-      'mtb',
-      'frime',
-      'road',
-      'best',
-      'chisel',
-      'turbo',
-      'weel',
-      'montain',
-      'proper',
-      'turbo levo',
-      's-works',
-      'epic evo',
-      'oxigen',
-      'electric',
-      'ancient',
-      'normal',
-      'kona',
-      'cruiser',
-      'omafiet',
-      'proper'
-    ];
-
     const spherical = new THREE.Spherical();
     const phiSpan = Math.PI / (count + 1);
     const thetaSpan = (Math.PI * 2) / count;
     for (let i = 1; i < count + 1; i++)
-      // Taken from https://discourse.threejs.org/t/can-i-place-obects-on-a-sphere-surface-evenly/4773/6
       for (let j = 0; j < count; j++) {
         let num = Math.floor(Math.random() * 40);
         temp.push([
@@ -117,22 +69,23 @@ function Cloud({ count = 4, radius = 20 }) {
   return words.map(([pos, word], index) => (
     <Word key={index} position={pos} children={word} />
   ));
-}
+};
 
-export default function Animation3D() {
+const Animation3D = () => {
   return (
-    <div style={{ display: 'flex', flexDirection: 'row' }}>
-      <h1 style={{ color: 'black' }}>Bicycles Brands </h1>
+    <div style={{ display: 'flex', flexDirection: 'row' }} id={'word'}>
+      <TextAnimation>Bicycles Brands </TextAnimation>
       <Canvas
-        style={{ height: '600px' }}
+        style={{ height: '80vh' }}
         dpr={[1, 2]}
-        //42 10 0
-        camera={{ position: [42, 0, 0], fov: 60 }}
+        camera={{ position: [0, 46, 46], fov: 40 }}
       >
         <fog attach="fog" args={['#202025', 40, 100]} />
         <Cloud count={8} radius={20} />
-        <TrackballControls />
+        <TrackballControls domElement={document.getElementById('word')} />
       </Canvas>
     </div>
   );
-}
+};
+
+export default Animation3D;

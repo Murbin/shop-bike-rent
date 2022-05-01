@@ -15,3 +15,7 @@ code {
 .pro-arrow-wrapper{
   display: none;
 }
+
+.sortable-handler {
+  touch-action: none;
+}

@@ -13,6 +13,16 @@ export const ContainerLoader = styled.div`
   align-items: center;
 `;
 
+export const TextAnimation = styled.p`
+  font-size: 50px;
+  font-weight: bold;
+  font-family: 'Cairo', sans-serif;
+  padding-left: 50px;
+  margin: 0px;
+  text-align: left;
+  color: white;
+`;
+
 export const ContainerHome = styled.button`
   width: 100%;
   height: 100vh;

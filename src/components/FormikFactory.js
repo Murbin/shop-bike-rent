@@ -6,7 +6,7 @@ import { initialValues } from '../utils/helper';
 const FormikFactory = () => (
   <Formik
     initialValues={initialValues}
-    onSubmit={({ setSubmitting }) => {
+    onSubmit={(setSubmitting) => {
       setSubmitting(false);
     }}
   >

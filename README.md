@@ -23,3 +23,5 @@ The project have implemented :
 
 9 React.lazy because React renders every page route, even when you don’t need it at that moment.
 React lazy Load the minimal code to the browser that will render a page. This improve performance and better TTI results.
+
+10 Three.js to add a modern design in Home

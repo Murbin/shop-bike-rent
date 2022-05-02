@@ -3,7 +3,7 @@ import { useRef, useState, useMemo, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Text, TrackballControls } from '@react-three/drei';
 import { mywords } from '../../utils/helper';
-import { TextAnimation } from '../../assets/styles';
+import { TextAnimation, Container3D } from '../../assets/styles';
 
 const Word = ({ children, ...props }) => {
   const color = new THREE.Color();
@@ -73,7 +73,7 @@ const Cloud = ({ count = 4, radius = 20 }) => {
 
 const Animation3D = () => {
   return (
-    <div style={{ display: 'flex', flexDirection: 'row' }} id={'word'}>
+    <Container3D id={'word'}>
       <TextAnimation>Bicycles Brands </TextAnimation>
       <Canvas
         style={{ height: '80vh' }}
@@ -84,7 +84,7 @@ const Animation3D = () => {
         <Cloud count={8} radius={20} />
         <TrackballControls domElement={document.getElementById('word')} />
       </Canvas>
-    </div>
+    </Container3D>
   );
 };
 

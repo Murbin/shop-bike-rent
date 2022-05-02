@@ -25,3 +25,6 @@ The project have implemented :
 React lazy Load the minimal code to the browser that will render a page. This improve performance and better TTI results.
 
 10 Three.js to add a modern design in Home
+
+11 Jest to analize component by component to avoid bugs and guarantee the functionalities.
+Steps install jest, setup config in jest.config.js, setup in setupTests.js, install libraries and run "npm run jest" to see results passed.

@@ -23,6 +23,14 @@ export const TextAnimation = styled.p`
   color: white;
 `;
 
+export const Container3D = styled.div`
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 800px) {
+    flex-direction: row;
+  }
+`;
+
 export const ContainerHome = styled.button`
   width: 100%;
   height: 100vh;
@@ -126,7 +134,7 @@ export const ContainerResume = styled.div`
   flex-direction: column;
   padding-bottom: 20px;
   @media (min-width: 800px) {
-    width: 40%;
+    width: 50%;
     height: 100vh;
     padding-bottom: 0px;
   }

@@ -14,6 +14,8 @@ const initialState = {
   name: undefined,
   points: undefined,
   image: undefined,
+  progress: 0,
+  text: '',
   stepsCompleted: {
     username: true,
     type: false,
@@ -84,6 +86,9 @@ export const shopBicycleDataSlice = createSlice({
         name: state.name,
         points: state.points
       });
+    },
+    updateDataCard(state, { payload: { name, val } }) {
+      state[name] = val;
     }
   },
   extraReducers: (builder) => {
@@ -110,7 +115,8 @@ export const {
   updateImage,
   updateAmount,
   updateHistory,
-  stepCompleted
+  stepCompleted,
+  updateDataCard
 } = shopBicycleDataSlice.actions;
 
 export const selectToggled = (state) => state.shopBicycleData.toggled;
@@ -124,5 +130,7 @@ export const selectResume = (state) => state.shopBicycleData;
 export const selectImage = (state) => state.shopBicycleData.image;
 export const selectAmountRent = (state) => state.shopBicycleData.amountRent;
 export const selectHistory = (state) => state.shopBicycleData.history;
+export const selectProgress = (state) => state.shopBicycleData.progress;
+export const selectText = (state) => state.shopBicycleData.text;
 
 export default shopBicycleDataSlice.reducer;

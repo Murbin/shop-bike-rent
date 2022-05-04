@@ -1,6 +1,6 @@
 import React from 'react';
 import { RowGroupCard } from '../assets/styles';
-import Card from '../components/Card';
+import Card from './Card';
 
 const GroupCards = (props) => {
   const { bicycles } = props;

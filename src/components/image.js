@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Resume from '../pages/Resume';
-import PreviousNextStep from '../components/PreviousNextStep';
+import PreviousNextStep from './PreviousNextStep';
 import {
   ContainerMain,
   BackgroundDepartment,

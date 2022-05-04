@@ -3,7 +3,7 @@ import { useDebouncedCallback } from 'use-debounce';
 import { useDispatch, useSelector } from 'react-redux';
 import { Field } from 'formik';
 import Resume from '../pages/Resume';
-import PreviousNextStep from '../components/PreviousNextStep';
+import PreviousNextStep from './PreviousNextStep';
 import {
   ContainerMain,
   ContainerInput,

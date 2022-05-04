@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import Loader from '../src/components/Loader';
 import FormikFactory from '../src/components/FormikFactory';
-import Layout from '../src/components/Layout';
+import Layout from './components/Layout';
 
 const App = () => (
   <Layout>

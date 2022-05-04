@@ -21,7 +21,7 @@ import {
   RowGroupByType,
   ButtonRent
 } from '../assets/styles';
-import PreviousNextStep from '../components/PreviousNextStep';
+import PreviousNextStep from './PreviousNextStep';
 import { useTranslation } from 'react-i18next';
 
 const GroupCardByType = ({
